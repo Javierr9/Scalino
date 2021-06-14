@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,12 +10,73 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MainMenu" customModule="MVC_Template" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="580" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YY-qr-kYY">
+                    <rect key="frame" x="269" y="52" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXX-4F-tpa" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="64" y="106" width="46" height="30"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="testMyScalesButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="rBq-LS-aJb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJt-QS-G08" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="475" y="94" width="46" height="42"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="testMyChordsButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="1g7-Zu-CVu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYa-EC-xcM" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="265" y="106" width="46" height="30"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="learnButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="yEa-Tl-V0t"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-YO-5DX">
+                    <rect key="frame" x="269" y="8" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.3411764705882353" green="0.30588235294117649" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="115"/>
+            <constraints>
+                <constraint firstItem="WkK-YO-5DX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="1xX-Xw-vbH"/>
+                <constraint firstItem="1YY-qr-kYY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="5Xe-Nl-mVn"/>
+                <constraint firstAttribute="bottom" secondItem="IJt-QS-G08" secondAttribute="bottom" constant="8" id="AO9-XD-wKU"/>
+                <constraint firstItem="WkK-YO-5DX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="HjL-LY-6cA"/>
+                <constraint firstItem="IJt-QS-G08" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="PTk-yO-5gf"/>
+                <constraint firstItem="1YY-qr-kYY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="VHv-6p-nNW"/>
+                <constraint firstAttribute="bottom" secondItem="dYa-EC-xcM" secondAttribute="bottom" constant="8" id="Zo3-wt-9kk"/>
+                <constraint firstItem="1YY-qr-kYY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="hUs-ti-RTL"/>
+                <constraint firstAttribute="bottom" secondItem="qXX-4F-tpa" secondAttribute="bottom" constant="8" id="l6y-VZ-LgK"/>
+                <constraint firstItem="1YY-qr-kYY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="uUh-CX-Vpt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descTitleLabel" destination="1YY-qr-kYY" id="zXJ-u4-Bqq"/>
+                <outlet property="learnButton" destination="dYa-EC-xcM" id="y0a-gz-Pxv"/>
+                <outlet property="testMyChordsButton" destination="IJt-QS-G08" id="C4i-8g-Y0I"/>
+                <outlet property="testMyScalesButton" destination="qXX-4F-tpa" id="IMv-Cl-f8H"/>
+                <outlet property="titleLabel" destination="WkK-YO-5DX" id="erp-dB-qR8"/>
+            </connections>
+            <point key="canvasLocation" x="131.91964285714286" y="114.49275362318842"/>
         </view>
     </objects>
     <resources>
