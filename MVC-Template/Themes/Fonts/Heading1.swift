@@ -1,13 +1,13 @@
 //
-//  AppName.swift
+//  Heading1.swift
 //  MVC-Template
 //
-//  Created by Mutiara Prasetyo on 09/06/21.
+//  Created by Nataniel Christandy on 14/06/21.
 //
 
 import UIKit
 
-class AppName: UILabel {
+class Heading1: UILabel {
     required init(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)!
             self.commonInit()
@@ -22,4 +22,5 @@ class AppName: UILabel {
     func commonInit () {
         self.font = UIFont.systemFont(ofSize: 24, weight: .bold)
     }
+    
 }

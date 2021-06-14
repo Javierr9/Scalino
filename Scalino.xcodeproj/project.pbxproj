@@ -34,6 +34,7 @@
 		452207832670B17100C8D8D6 /* ChordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207822670B17100C8D8D6 /* ChordPage.swift */; };
 		452207852670B17F00C8D8D6 /* TestMyKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207842670B17F00C8D8D6 /* TestMyKnowledge.swift */; };
 		452207872670B18F00C8D8D6 /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207862670B18F00C8D8D6 /* PianoView.swift */; };
+		ACFD74192676F58D00215A4D /* Heading1.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD74182676F58D00215A4D /* Heading1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		452207822670B17100C8D8D6 /* ChordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPage.swift; sourceTree = "<group>"; };
 		452207842670B17F00C8D8D6 /* TestMyKnowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMyKnowledge.swift; sourceTree = "<group>"; };
 		452207862670B18F00C8D8D6 /* PianoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
+		ACFD74182676F58D00215A4D /* Heading1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heading1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				4522075F2670AE6500C8D8D6 /* AppName.swift */,
 				452207612670AE7B00C8D8D6 /* Title.swift */,
 				452207632670AE8A00C8D8D6 /* Description.swift */,
+				ACFD74182676F58D00215A4D /* Heading1.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				4522076D2670AF5800C8D8D6 /* PianoVC.swift in Sources */,
 				452207812670B16600C8D8D6 /* ScalePage.swift in Sources */,
 				452207672670AEB400C8D8D6 /* CustomToggle.swift in Sources */,
+				ACFD74192676F58D00215A4D /* Heading1.swift in Sources */,
 				4522077F2670B14400C8D8D6 /* MainMenu.swift in Sources */,
 				2C87DA8C266A0A5A007F783E /* SceneDelegate.swift in Sources */,
 				452207642670AE8A00C8D8D6 /* Description.swift in Sources */,

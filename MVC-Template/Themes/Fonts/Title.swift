@@ -8,13 +8,20 @@
 import UIKit
 
 class Title: UILabel {
+        required init(coder aDecoder: NSCoder) {
+                super.init(coder: aDecoder)!
+                self.commonInit()
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+            }
+
+            override init(frame: CGRect) {
+                super.init(frame: frame)
+                self.commonInit()
+            }
+        
+        func commonInit () {
+            self.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        }
+
 
 }
