@@ -34,6 +34,8 @@
 		452207832670B17100C8D8D6 /* ChordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207822670B17100C8D8D6 /* ChordPage.swift */; };
 		452207852670B17F00C8D8D6 /* TestMyKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207842670B17F00C8D8D6 /* TestMyKnowledge.swift */; };
 		452207872670B18F00C8D8D6 /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207862670B18F00C8D8D6 /* PianoView.swift */; };
+		CC3C0D572676E39D004265F2 /* CollectionViewScalePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */; };
+		CC3C0D582676E39D004265F2 /* CollectionViewScalePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */; };
 		A9F7A3F0267849F4006B62BB /* NavigationDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		452207822670B17100C8D8D6 /* ChordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPage.swift; sourceTree = "<group>"; };
 		452207842670B17F00C8D8D6 /* TestMyKnowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMyKnowledge.swift; sourceTree = "<group>"; };
 		452207862670B18F00C8D8D6 /* PianoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
+		CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewScalePageCell.swift; sourceTree = "<group>"; };
+		CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewScalePageCell.xib; sourceTree = "<group>"; };
 		A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +258,8 @@
 			children = (
 				452207722670AFF100C8D8D6 /* ScalePage.xib */,
 				452207802670B16600C8D8D6 /* ScalePage.swift */,
+				CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */,
+				CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */,
 			);
 			path = ScalePage;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 			files = (
 				2C87DA96266A0A5B007F783E /* LaunchScreen.storyboard in Resources */,
 				452207772670B02F00C8D8D6 /* TestMyKnowledge.xib in Resources */,
+				CC3C0D582676E39D004265F2 /* CollectionViewScalePageCell.xib in Resources */,
 				4522075E2670ADD800C8D8D6 /* RoundCell.xib in Resources */,
 				452207732670AFF100C8D8D6 /* ScalePage.xib in Resources */,
 				452207752670AFFB00C8D8D6 /* ChordPage.xib in Resources */,
@@ -380,6 +387,7 @@
 				2C87DAC2266A686F007F783E /* AppNameColor.swift in Sources */,
 				452207872670B18F00C8D8D6 /* PianoView.swift in Sources */,
 				452207602670AE6500C8D8D6 /* AppName.swift in Sources */,
+				CC3C0D572676E39D004265F2 /* CollectionViewScalePageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
