@@ -524,12 +524,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 665XP63X44;
-				INFOPLIST_FILE = "MVC-Template/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Default Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Allicia-Viona.MVC-Template";
+				PRODUCT_BUNDLE_IDENTIFIER = Serenade.Scalino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -543,12 +543,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 665XP63X44;
-				INFOPLIST_FILE = "MVC-Template/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Default Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Allicia-Viona.MVC-Template";
+				PRODUCT_BUNDLE_IDENTIFIER = Serenade.Scalino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
