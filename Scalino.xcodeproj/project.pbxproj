@@ -35,6 +35,9 @@
 		452207852670B17F00C8D8D6 /* TestMyKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207842670B17F00C8D8D6 /* TestMyKnowledge.swift */; };
 		452207872670B18F00C8D8D6 /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207862670B18F00C8D8D6 /* PianoView.swift */; };
 		A9F7A3F0267849F4006B62BB /* NavigationDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */; };
+		A9F7A4012678D43F006B62BB /* FullNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A3FE2678D43F006B62BB /* FullNotesCell.swift */; };
+		A9F7A4022678D43F006B62BB /* FullNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F7A3FF2678D43F006B62BB /* FullNotesCell.xib */; };
+		A9F7A4032678D43F006B62BB /* NoteLongPressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A4002678D43F006B62BB /* NoteLongPressGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		452207842670B17F00C8D8D6 /* TestMyKnowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMyKnowledge.swift; sourceTree = "<group>"; };
 		452207862670B18F00C8D8D6 /* PianoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
 		A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegates.swift; sourceTree = "<group>"; };
+		A9F7A3FE2678D43F006B62BB /* FullNotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullNotesCell.swift; sourceTree = "<group>"; };
+		A9F7A3FF2678D43F006B62BB /* FullNotesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullNotesCell.xib; sourceTree = "<group>"; };
+		A9F7A4002678D43F006B62BB /* NoteLongPressGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLongPressGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +287,9 @@
 			children = (
 				452207782670B05B00C8D8D6 /* PianoView.xib */,
 				452207862670B18F00C8D8D6 /* PianoView.swift */,
+				A9F7A3FE2678D43F006B62BB /* FullNotesCell.swift */,
+				A9F7A3FF2678D43F006B62BB /* FullNotesCell.xib */,
+				A9F7A4002678D43F006B62BB /* NoteLongPressGesture.swift */,
 			);
 			path = PianoView;
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 				452207772670B02F00C8D8D6 /* TestMyKnowledge.xib in Resources */,
 				4522075E2670ADD800C8D8D6 /* RoundCell.xib in Resources */,
 				452207732670AFF100C8D8D6 /* ScalePage.xib in Resources */,
+				A9F7A4022678D43F006B62BB /* FullNotesCell.xib in Resources */,
 				452207752670AFFB00C8D8D6 /* ChordPage.xib in Resources */,
 				2C87DA93266A0A5B007F783E /* Assets.xcassets in Resources */,
 				452207792670B05B00C8D8D6 /* PianoView.xib in Resources */,
@@ -363,8 +373,10 @@
 			files = (
 				2C87DAE0266A7256007F783E /* NetworkManager.swift in Sources */,
 				A9F7A3F0267849F4006B62BB /* NavigationDelegates.swift in Sources */,
+				A9F7A4012678D43F006B62BB /* FullNotesCell.swift in Sources */,
 				452207622670AE7B00C8D8D6 /* Title.swift in Sources */,
 				2C87DABC266A667C007F783E /* BackButton.swift in Sources */,
+				A9F7A4032678D43F006B62BB /* NoteLongPressGesture.swift in Sources */,
 				452207592670AD5A00C8D8D6 /* PillButton.swift in Sources */,
 				4522075D2670ADD800C8D8D6 /* RoundCell.swift in Sources */,
 				2C87DA8A266A0A5A007F783E /* AppDelegate.swift in Sources */,
