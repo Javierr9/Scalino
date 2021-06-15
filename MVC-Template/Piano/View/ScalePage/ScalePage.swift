@@ -37,14 +37,16 @@ class ScalePage: UIView {
         }
 
         private func initCollectionView() {
-            let nib = UINib(nibName: "CustomCell", bundle: nil)
-            collectionViewScalePage.register(nib, forCellWithReuseIdentifier: "CustomCell")
+            let nib = UINib(nibName: "RoundCell", bundle: nil)
+            collectionViewScalePage.register(nib, forCellWithReuseIdentifier: "RoundCell")
             collectionViewScalePage.dataSource = self
             collectionViewScalePage.delegate = self
         
         
     }
 }
+
+let collectionViewCell:[String] = ["C", "G", "D", "A", "E", "B", "F", "F#", "C#", "B♭", "D#", "A♭"]
 
 extension ScalePage: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -53,10 +55,10 @@ extension ScalePage: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as? CollectionViewScalePageCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoundCell", for: indexPath) as? CollectionViewScalePageCell else {
             fatalError("can't dequeue CustomCell")
         }
-        cell.xibLabelScalePage.text = "button scale"
+        cell.xibLabelScalePage.text = collectionViewCell[indexPath.row]
         return cell
     }
     
