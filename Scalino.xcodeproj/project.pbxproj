@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01319AAA267B2F8A00433BC6 /* CollectionViewCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01319AA9267B2F8A00433BC6 /* CollectionViewCells.xib */; };
+		01319AAC267B2FB800433BC6 /* CollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01319AAB267B2FB800433BC6 /* CollectionViewCells.swift */; };
 		2C87DA8A266A0A5A007F783E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87DA89266A0A5A007F783E /* AppDelegate.swift */; };
 		2C87DA8C266A0A5A007F783E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87DA8B266A0A5A007F783E /* SceneDelegate.swift */; };
 		2C87DA93266A0A5B007F783E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C87DA92266A0A5B007F783E /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01319AA9267B2F8A00433BC6 /* CollectionViewCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCells.xib; sourceTree = "<group>"; };
+		01319AAB267B2FB800433BC6 /* CollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCells.swift; sourceTree = "<group>"; };
 		2C87DA86266A0A5A007F783E /* MVC-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C87DA89266A0A5A007F783E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C87DA8B266A0A5A007F783E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +279,8 @@
 			children = (
 				452207762670B02F00C8D8D6 /* TestMyKnowledge.xib */,
 				452207842670B17F00C8D8D6 /* TestMyKnowledge.swift */,
+				01319AA9267B2F8A00433BC6 /* CollectionViewCells.xib */,
+				01319AAB267B2FB800433BC6 /* CollectionViewCells.swift */,
 			);
 			path = TestMyKnowledge;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				452207792670B05B00C8D8D6 /* PianoView.xib in Resources */,
 				4522076F2670AF7400C8D8D6 /* Piano.storyboard in Resources */,
 				452207712670AF9200C8D8D6 /* MainMenu.xib in Resources */,
+				01319AAA267B2F8A00433BC6 /* CollectionViewCells.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +382,7 @@
 				4522077C2670B0A100C8D8D6 /* PianoModel.swift in Sources */,
 				452207832670B17100C8D8D6 /* ChordPage.swift in Sources */,
 				4522076D2670AF5800C8D8D6 /* PianoVC.swift in Sources */,
+				01319AAC267B2FB800433BC6 /* CollectionViewCells.swift in Sources */,
 				452207812670B16600C8D8D6 /* ScalePage.swift in Sources */,
 				452207672670AEB400C8D8D6 /* CustomToggle.swift in Sources */,
 				4522077F2670B14400C8D8D6 /* MainMenu.swift in Sources */,
