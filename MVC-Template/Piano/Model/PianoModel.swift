@@ -12,6 +12,7 @@ class PianoModel {
     static let intervals: [Int] = [0, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1]
     static let notesInChord: [Int] = [0, 2, 4]
     static let chordTypes: [String] = ["Major", "Minor", "Minor", "Major", "Minor", "Minor", "Diminished"]
+    static let blackNotesTag: [Int] = [1, 3, 6, 8, 10]
 }
 
 func getNotesInScale(from note: String) -> [String] {
