@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChordPage" customModule="MVC_Template" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -67,6 +67,16 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="ChordPageView" destination="8VQ-OD-llK" id="BGo-J7-L8F"/>
+                <outlet property="DimBtn" destination="46A-JL-JIB" id="wU7-U6-Y1O"/>
+                <outlet property="Major1Btn" destination="1Ug-2H-XrM" id="9tg-DI-ShY"/>
+                <outlet property="Major2Btn" destination="oKr-7W-s7d" id="hW7-7h-Z8R"/>
+                <outlet property="Major3Btn" destination="WSj-EK-hKg" id="ZhA-E8-89F"/>
+                <outlet property="Minor1Btn" destination="E4J-Kc-6MG" id="2AC-wq-Cdm"/>
+                <outlet property="Minor2Btn" destination="ddB-N6-hhT" id="gQK-Jn-qfb"/>
+                <outlet property="Minor3Btn" destination="4wI-HJ-uLg" id="YTX-S9-2Rj"/>
+            </connections>
             <point key="canvasLocation" x="107" y="109"/>
         </view>
     </objects>
