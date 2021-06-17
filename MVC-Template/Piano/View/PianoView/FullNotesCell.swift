@@ -7,9 +7,6 @@
 
 import UIKit
 
-let Purple = #colorLiteral(red: 0.337254902, green: 0.3019607843, blue: 0.5019607843, alpha: 1)
-let lightPurple = #colorLiteral(red: 0.6196078431, green: 0.6196078431, blue: 0.7294117647, alpha: 1)
-
 class FullNotesCell: UICollectionViewCell {
 
     @IBOutlet var noteViews: [UIView]!
