@@ -10,4 +10,5 @@ import UIKit
 class NoteLongPressGesture: UILongPressGestureRecognizer {
     var notePressed: Int?
     var noteView: UIView?
+    var noteLabel: UILabel?
 }
