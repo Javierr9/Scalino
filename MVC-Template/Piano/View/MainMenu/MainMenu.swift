@@ -8,6 +8,8 @@
 import UIKit
 
 class MainMenu: UIView {
+    
+    public weak var delegate: NavigationDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,14 +39,14 @@ class MainMenu: UIView {
     @IBOutlet weak var testMyChordsButton: UIButton!
     
     @IBAction func testMyScalesButtonPressed(_ sender: Any) {
-        
+        delegate?.navigateToTestScale?()
     }
     
     @IBAction func learnButtonPressed(_ sender: UIButton) {
-
+        delegate?.navigateToLearnScale?()
     }
     
     @IBAction func testMyChordsButtonPressed(_ sender: UIButton) {
-
+        delegate?.navigateToTestChord?()
     }
 }
