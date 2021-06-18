@@ -10,7 +10,8 @@ import UIKit
 class MainMenu: UIView {
     
     public weak var delegate: NavigationDelegate?
-
+    @IBOutlet var contentView: UIView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -22,14 +23,21 @@ class MainMenu: UIView {
     }
     
     private func commonInit(){
+        Bundle.main.loadNibNamed("MainMenu", owner: self, options: nil)
         titleLabel.text = "SCALINO"
         titleLabel.textColor = #colorLiteral(red: 0.4171671867, green: 0.3886381686, blue: 0.5856596231, alpha: 1)
+        titleLabel.font = UIFont.systemFont(ofSize: 36, weight: .bold)
         descTitleLabel.text = "Practice your chords through scales"
         descTitleLabel.textColor = #colorLiteral(red: 0.6819174886, green: 0.6852018833, blue: 0.7779753208, alpha: 1)
+        descTitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         
         testMyScalesButton.setTitle("Test my scales", for: .normal)
         learnButton.setTitle("Let’s Learn", for: .normal)
         testMyChordsButton.setTitle("Test my chords", for: .normal)
+        
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 
     @IBOutlet weak var titleLabel: UILabel!

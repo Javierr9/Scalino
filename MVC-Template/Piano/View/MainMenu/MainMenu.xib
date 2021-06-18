@@ -4,38 +4,46 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMenu" customModule="MVC_Template" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="yL4-QT-B1V"/>
+                <outlet property="descTitleLabel" destination="1YY-qr-kYY" id="Ys5-aW-Xra"/>
+                <outlet property="learnButton" destination="dYa-EC-xcM" id="Pm1-XW-S3g"/>
+                <outlet property="testMyChordsButton" destination="IJt-QS-G08" id="GQd-hy-f60"/>
+                <outlet property="testMyScalesButton" destination="qXX-4F-tpa" id="5no-cA-iQT"/>
+                <outlet property="titleLabel" destination="WkK-YO-5DX" id="1Z9-Ym-igM"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MainMenu" customModule="MVC_Template" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="580" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YY-qr-kYY">
-                    <rect key="frame" x="269" y="60" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="272.33333333333331" y="63.666666666666657" width="35.333333333333314" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXX-4F-tpa" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
-                    <rect key="frame" x="71" y="106" width="46" height="30"/>
+                    <rect key="frame" x="157" y="106" width="46" height="30"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="testMyScalesButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="rBq-LS-aJb"/>
+                        <action selector="testMyScalesButtonPressed:" destination="-1" eventType="touchUpInside" id="Qkw-of-c1o"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJt-QS-G08" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
-                    <rect key="frame" x="463" y="106" width="46" height="30"/>
+                    <rect key="frame" x="377" y="106" width="46" height="30"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="testMyChordsButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="1g7-Zu-CVu"/>
+                        <action selector="testMyChordsButtonPressed:" destination="-1" eventType="touchUpInside" id="IMn-ia-Rm9"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYa-EC-xcM" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
@@ -44,46 +52,34 @@
                         <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="learnButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="yEa-Tl-V0t"/>
+                        <action selector="learnButtonPressed:" destination="-1" eventType="touchUpInside" id="Wnf-pa-RNA"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-YO-5DX">
-                    <rect key="frame" x="269" y="8" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="247.66666666666666" y="8" width="84.666666666666657" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
                     <color key="textColor" red="0.3411764705882353" green="0.30588235294117649" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="dYa-EC-xcM" firstAttribute="bottom" secondItem="qXX-4F-tpa" secondAttribute="bottom" id="0oQ-4V-dww"/>
                 <constraint firstItem="IJt-QS-G08" firstAttribute="bottom" secondItem="qXX-4F-tpa" secondAttribute="bottom" id="A6F-0N-FMd"/>
                 <constraint firstAttribute="bottom" secondItem="dYa-EC-xcM" secondAttribute="bottom" constant="8" id="EaC-if-w6u"/>
                 <constraint firstItem="dYa-EC-xcM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GnS-ld-WOY"/>
-                <constraint firstItem="1YY-qr-kYY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="J0F-Nn-jvs"/>
-                <constraint firstItem="1YY-qr-kYY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="KFT-YE-Jf7"/>
+                <constraint firstItem="1YY-qr-kYY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HQf-Dg-f1V"/>
                 <constraint firstItem="dYa-EC-xcM" firstAttribute="top" secondItem="qXX-4F-tpa" secondAttribute="top" id="LZY-q8-zH6"/>
-                <constraint firstItem="IJt-QS-G08" firstAttribute="leading" secondItem="dYa-EC-xcM" secondAttribute="trailing" constant="150" id="PB2-3b-G2d"/>
-                <constraint firstItem="dYa-EC-xcM" firstAttribute="leading" secondItem="qXX-4F-tpa" secondAttribute="trailing" constant="150" id="Rpt-cm-oUh"/>
+                <constraint firstItem="IJt-QS-G08" firstAttribute="leading" secondItem="dYa-EC-xcM" secondAttribute="trailing" constant="64" id="PB2-3b-G2d"/>
+                <constraint firstItem="dYa-EC-xcM" firstAttribute="leading" secondItem="qXX-4F-tpa" secondAttribute="trailing" constant="64" id="Rpt-cm-oUh"/>
+                <constraint firstItem="1YY-qr-kYY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WN4-nT-0Es"/>
                 <constraint firstItem="WkK-YO-5DX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bge-tp-VE3"/>
                 <constraint firstItem="WkK-YO-5DX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="f7w-JY-nk4"/>
                 <constraint firstItem="IJt-QS-G08" firstAttribute="top" secondItem="qXX-4F-tpa" secondAttribute="top" id="p7a-i6-2fd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="descTitleLabel" destination="1YY-qr-kYY" id="zXJ-u4-Bqq"/>
-                <outlet property="learnButton" destination="dYa-EC-xcM" id="y0a-gz-Pxv"/>
-                <outlet property="testMyChordsButton" destination="IJt-QS-G08" id="C4i-8g-Y0I"/>
-                <outlet property="testMyScalesButton" destination="qXX-4F-tpa" id="IMv-Cl-f8H"/>
-                <outlet property="titleLabel" destination="WkK-YO-5DX" id="erp-dB-qR8"/>
-            </connections>
             <point key="canvasLocation" x="131.91964285714286" y="114.49275362318842"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

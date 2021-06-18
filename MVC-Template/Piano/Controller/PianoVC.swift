@@ -29,6 +29,7 @@ class PianoVC: UIViewController {
     var score = 0
     var correctAnswer = getScaleAnswer(from: "C")
     var isLearningScale = false
+    let center = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,9 @@ class PianoVC: UIViewController {
         collectionView.register(UINib(nibName: "C", bundle: .main), forCellWithReuseIdentifier: "CCell")
         collectionViewSetup()
         initializeSoundFilename()
+        //get notification
+        registerLocal()
+        scheduleLocal()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -53,7 +57,7 @@ class PianoVC: UIViewController {
     func setupMiddleView() {
         middleView.layer.cornerRadius = 16
         let mainMenuView = MainMenu()
-//        mainMenuView.delegate = self
+        mainMenuView.delegate = self
         mainMenuView.tag = mainViewTag
         previousView = mainMenuView
         addMiddleView(with: mainMenuView, tag: mainViewTag)
@@ -127,6 +131,30 @@ class PianoVC: UIViewController {
         customGesture.addTarget(self, action: #selector(pianoNotePressed(_:)))
         return customGesture
     }
+    
+    //register notification
+    func registerLocal() {
+        center.removeAllPendingNotificationRequests()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+        }
+    }
+    
+    //schedule notification
+    func scheduleLocal() {
+        let content = UNMutableNotificationContent()
+        content.title = "title"
+        content.body = "description"
+        content.categoryIdentifier = "alarm"
+        content.sound = .default
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = 11
+        dateComponents.minute = 16
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest (identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+    }
 }
 
 extension PianoVC: UICollectionViewDataSource {
@@ -145,6 +173,7 @@ extension PianoVC: UICollectionViewDataSource {
             }
             for index in 0 ..< 12 {
                 fullNotesCell.noteViews[index].addGestureRecognizer(generateGesture(notePressed: indexPath.row == 0 ? index : index + 12, noteLabel: fullNotesCell.noteLabels[index], noteView: fullNotesCell.noteViews[index]))
+                fullNotesCell.numericNoteLabels[index].isHidden = true
             }
             for index in 0 ..< 8 {
                 fullNotesCell.numericNoteLabels[rootNoteIndex].isHidden = !numericNoteDisplayToggle.isOn
@@ -198,62 +227,25 @@ extension PianoVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension PianoVC: NavigationDelegate {
-    func navigateToScale() {
-        removeMiddleView(tag: mainViewTag)
-        let scaleView = ScalePage()
-//        scaleView.delegate = self
-        isLearningScale = true
-        addMiddleView(with: scaleView, tag: scaleViewTag)
-    }
+extension PianoVC: NavigationDelegate, ScalePageDelegate {
     func navigateToMain() {
         removeMiddleView(tag: scaleViewTag)
         let mainView = MainMenu()
-//        mainView.delegate = self
+        mainView.delegate = self
         addMiddleView(with: mainView, tag: mainViewTag)
     }
-        // Do any additional setup after loading the view.
-        
-        //get notification
-        registerLocal()
-        scheduleLocal()
+    
+    func navigateToLearnScale() {
+        removeMiddleView(tag: mainViewTag)
+        let scaleView = ScalePage()
+        scaleView.navigationDelegate = self
+        scaleView.scalePageDelegate = self
+        isLearningScale = true
+        addMiddleView(with: scaleView, tag: scaleViewTag)
     }
     
-    //notification
-    let center = UNUserNotificationCenter.current()
-    
-    //register notification
-    func registerLocal() {
-        center.removeAllPendingNotificationRequests()
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-        }
+    func didSelectScale(rootScale: String) {
+        rootNote = rootScale
+        collectionView.reloadData()
     }
-    
-    //schedule notification
-    func scheduleLocal() {
-        let content = UNMutableNotificationContent()
-        content.title = "title"
-        content.body = "description"
-        content.categoryIdentifier = "alarm"
-        content.sound = .default
-        
-        var dateComponents = DateComponents()
-        dateComponents.hour = 11
-        dateComponents.minute = 16
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let request = UNNotificationRequest (identifier: UUID().uuidString, content: content, trigger: trigger)
-        center.add(request)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
