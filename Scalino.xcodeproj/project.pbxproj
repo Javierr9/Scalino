@@ -36,6 +36,8 @@
 		452207872670B18F00C8D8D6 /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207862670B18F00C8D8D6 /* PianoView.swift */; };
 		A9976049267C5B83003D04E3 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9976047267C5B83003D04E3 /* C.swift */; };
 		A997604A267C5B83003D04E3 /* C.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9976048267C5B83003D04E3 /* C.xib */; };
+		A997604C267C6F9C003D04E3 /* ScalePageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997604B267C6F9C003D04E3 /* ScalePageDelegate.swift */; };
+		A997604E267C6FE0003D04E3 /* ChordPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997604D267C6FE0003D04E3 /* ChordPageDelegate.swift */; };
 		A9F7A3F0267849F4006B62BB /* NavigationDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */; };
 		A9F7A4012678D43F006B62BB /* FullNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A3FE2678D43F006B62BB /* FullNotesCell.swift */; };
 		A9F7A4022678D43F006B62BB /* FullNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F7A3FF2678D43F006B62BB /* FullNotesCell.xib */; };
@@ -74,6 +76,8 @@
 		452207862670B18F00C8D8D6 /* PianoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
 		A9976047267C5B83003D04E3 /* C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C.swift; sourceTree = "<group>"; };
 		A9976048267C5B83003D04E3 /* C.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C.xib; sourceTree = "<group>"; };
+		A997604B267C6F9C003D04E3 /* ScalePageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePageDelegate.swift; sourceTree = "<group>"; };
+		A997604D267C6FE0003D04E3 /* ChordPageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPageDelegate.swift; sourceTree = "<group>"; };
 		A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegates.swift; sourceTree = "<group>"; };
 		A9F7A3FE2678D43F006B62BB /* FullNotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullNotesCell.swift; sourceTree = "<group>"; };
 		A9F7A3FF2678D43F006B62BB /* FullNotesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullNotesCell.xib; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 			children = (
 				4522077B2670B0A100C8D8D6 /* PianoModel.swift */,
 				A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */,
+				A997604B267C6F9C003D04E3 /* ScalePageDelegate.swift */,
+				A997604D267C6FE0003D04E3 /* ChordPageDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -382,11 +388,13 @@
 				A9F7A3F0267849F4006B62BB /* NavigationDelegates.swift in Sources */,
 				A9F7A4012678D43F006B62BB /* FullNotesCell.swift in Sources */,
 				A9976049267C5B83003D04E3 /* C.swift in Sources */,
+				A997604E267C6FE0003D04E3 /* ChordPageDelegate.swift in Sources */,
 				452207622670AE7B00C8D8D6 /* Title.swift in Sources */,
 				2C87DABC266A667C007F783E /* BackButton.swift in Sources */,
 				A9F7A4032678D43F006B62BB /* NoteLongPressGesture.swift in Sources */,
 				452207592670AD5A00C8D8D6 /* PillButton.swift in Sources */,
 				4522075D2670ADD800C8D8D6 /* RoundCell.swift in Sources */,
+				A997604C267C6F9C003D04E3 /* ScalePageDelegate.swift in Sources */,
 				2C87DA8A266A0A5A007F783E /* AppDelegate.swift in Sources */,
 				452207852670B17F00C8D8D6 /* TestMyKnowledge.swift in Sources */,
 				4522077C2670B0A100C8D8D6 /* PianoModel.swift in Sources */,
