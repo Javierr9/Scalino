@@ -36,6 +36,7 @@
 		452207872670B18F00C8D8D6 /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207862670B18F00C8D8D6 /* PianoView.swift */; };
 		CC3C0D572676E39D004265F2 /* CollectionViewScalePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */; };
 		CC3C0D582676E39D004265F2 /* CollectionViewScalePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */; };
+		A9F7A3F0267849F4006B62BB /* NavigationDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		452207862670B18F00C8D8D6 /* PianoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
 		CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewScalePageCell.swift; sourceTree = "<group>"; };
 		CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewScalePageCell.xib; sourceTree = "<group>"; };
+		A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				4522077B2670B0A100C8D8D6 /* PianoModel.swift */,
+				A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C87DAE0266A7256007F783E /* NetworkManager.swift in Sources */,
+				A9F7A3F0267849F4006B62BB /* NavigationDelegates.swift in Sources */,
 				452207622670AE7B00C8D8D6 /* Title.swift in Sources */,
 				2C87DABC266A667C007F783E /* BackButton.swift in Sources */,
 				452207592670AD5A00C8D8D6 /* PillButton.swift in Sources */,
