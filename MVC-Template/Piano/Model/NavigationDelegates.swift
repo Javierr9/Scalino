@@ -13,4 +13,10 @@ import Foundation
     @objc optional func navigateToLearn()
     @objc optional func navigateToChord()
     @objc optional func navigateToTestKnowledge()
+    
+    
+    @objc optional func navigateToLearnScale()
+    @objc optional func navigateToLearnChord()
+    @objc optional func navigateToTestScale()
+    @objc optional func navigateToTestChord()
 }
