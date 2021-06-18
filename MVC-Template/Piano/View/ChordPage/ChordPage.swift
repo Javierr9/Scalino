@@ -9,13 +9,12 @@ import UIKit
 
 class ChordPage: UIView {
 
-    @IBOutlet var Major1Btn : UIButton!
-    @IBOutlet var Minor1Btn : UIButton!
-    @IBOutlet var Minor2Btn : UIButton!
-    @IBOutlet var Major2Btn : UIButton!
-    @IBOutlet var Major3Btn : UIButton!
-    @IBOutlet var Minor3Btn : UIButton!
-    @IBOutlet var DimBtn : UIButton!
+    @IBOutlet var Title: UILabel!
+    @IBOutlet var Buttons: [UIButton]!
+    
+    @IBAction func buttonsTap(_sender: UIButton){
+        
+    }
 
     @IBOutlet weak var ChordPageView: UIView!
     
@@ -31,7 +30,7 @@ class ChordPage: UIView {
     
     private func commonInit() {
         let bundle = Bundle(for: type(of: self))
-        bundle.loadNibNamed("CustomView", owner: self, options: nil)
+        bundle.loadNibNamed("ChordPage", owner: self, options: nil)
         addSubview(ChordPageView)
         ChordPageView.frame = bounds
         ChordPageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

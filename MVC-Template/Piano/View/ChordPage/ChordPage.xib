@@ -29,36 +29,57 @@
                             <rect key="frame" x="67" y="50" width="95" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonsTapWith_sender:" destination="iN0-l3-epB" eventType="touchUpInside" id="fuB-5m-F68"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4J-Kc-6MG" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
                             <rect key="frame" x="183" y="50" width="95" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonsTapWith_sender:" destination="iN0-l3-epB" eventType="touchUpInside" id="ylz-qo-DGC"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddB-N6-hhT" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
                             <rect key="frame" x="299" y="50" width="95" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonsTapWith_sender:" destination="iN0-l3-epB" eventType="touchUpInside" id="igU-av-a5b"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKr-7W-s7d" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
                             <rect key="frame" x="424" y="50" width="95" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonsTapWith_sender:" destination="iN0-l3-epB" eventType="touchUpInside" id="HNb-C7-vNW"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSj-EK-hKg" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
                             <rect key="frame" x="67" y="92" width="95" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonsTapWith_sender:" destination="iN0-l3-epB" eventType="touchUpInside" id="Q4J-l0-9JP"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wI-HJ-uLg" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
                             <rect key="frame" x="183" y="92" width="95" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonsTapWith_sender:" destination="iN0-l3-epB" eventType="touchUpInside" id="hxQ-lH-jpn"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46A-JL-JIB" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
                             <rect key="frame" x="299" y="92" width="95" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonsTapWith_sender:" destination="iN0-l3-epB" eventType="touchUpInside" id="rt7-8w-Jnj"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,13 +90,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="ChordPageView" destination="8VQ-OD-llK" id="BGo-J7-L8F"/>
-                <outlet property="DimBtn" destination="46A-JL-JIB" id="wU7-U6-Y1O"/>
-                <outlet property="Major1Btn" destination="1Ug-2H-XrM" id="9tg-DI-ShY"/>
-                <outlet property="Major2Btn" destination="oKr-7W-s7d" id="hW7-7h-Z8R"/>
-                <outlet property="Major3Btn" destination="WSj-EK-hKg" id="ZhA-E8-89F"/>
-                <outlet property="Minor1Btn" destination="E4J-Kc-6MG" id="2AC-wq-Cdm"/>
-                <outlet property="Minor2Btn" destination="ddB-N6-hhT" id="gQK-Jn-qfb"/>
-                <outlet property="Minor3Btn" destination="4wI-HJ-uLg" id="YTX-S9-2Rj"/>
+                <outlet property="Title" destination="FLg-1n-h6D" id="4Ny-17-XPn"/>
+                <outletCollection property="Buttons" destination="1Ug-2H-XrM" collectionClass="NSMutableArray" id="AtJ-GI-YED"/>
+                <outletCollection property="Buttons" destination="E4J-Kc-6MG" collectionClass="NSMutableArray" id="UXK-Tn-EcP"/>
+                <outletCollection property="Buttons" destination="ddB-N6-hhT" collectionClass="NSMutableArray" id="Ivy-Bo-e7j"/>
+                <outletCollection property="Buttons" destination="oKr-7W-s7d" collectionClass="NSMutableArray" id="GKj-Ld-eAo"/>
+                <outletCollection property="Buttons" destination="WSj-EK-hKg" collectionClass="NSMutableArray" id="iaN-0c-Ek9"/>
+                <outletCollection property="Buttons" destination="4wI-HJ-uLg" collectionClass="NSMutableArray" id="e79-MK-TpR"/>
+                <outletCollection property="Buttons" destination="46A-JL-JIB" collectionClass="NSMutableArray" id="E0T-Lm-HhF"/>
             </connections>
             <point key="canvasLocation" x="107" y="109"/>
         </view>
