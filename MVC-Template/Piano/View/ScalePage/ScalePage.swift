@@ -58,7 +58,7 @@ extension ScalePage: UICollectionViewDataSource, UICollectionViewDelegate {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoundCell", for: indexPath) as? CollectionViewScalePageCell else {
             fatalError("can't dequeue CustomCell")
         }
-        cell.xibLabelScalePage.text = collectionViewCell[indexPath.row]
+        cell.xibLabelScalePage.text = PianoModel.fullNotes[indexPath.row]
         return cell
     }
     
