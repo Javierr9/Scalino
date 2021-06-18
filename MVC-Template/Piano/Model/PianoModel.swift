@@ -12,7 +12,7 @@ class PianoModel {
     static let intervals: [Int] = [0, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1]
     static let notesInChord: [Int] = [0, 2, 4]
     static let chordTypes: [String] = ["Major", "Minor", "Minor", "Major", "Minor", "Minor", "Diminished"]
-    static let blackNotesTag: [Int] = [1, 3, 6, 8, 10]
+    static let blackNotesTag: [Int] = [1, 3, 6, 8, 10, 13, 15, 18, 20, 22]
 }
 
 func getNotesInScale(from note: String) -> [String] {
@@ -51,4 +51,16 @@ func getChordNames(from scale: String) -> [String] {
         fullChordName.append("\(notesInScale[currentNote]) \(PianoModel.chordTypes[currentNote])")
     }
     return fullChordName
+}
+
+func getScaleAnswer(from scale: String) -> [Int]{
+    guard let rootNote = PianoModel.fullNotes.firstIndex(of: scale) else { return [] }
+    var correctAnswer: [Int] = []
+    var currentNote = rootNote
+    for index in 0 ..< 8 {
+        correctAnswer.append(currentNote + PianoModel.intervals[index])
+        currentNote += PianoModel.intervals[index]
+    }
+    print(correctAnswer)
+    return correctAnswer
 }
