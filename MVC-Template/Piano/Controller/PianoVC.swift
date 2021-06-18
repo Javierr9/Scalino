@@ -1,11 +1,13 @@
+
 //
-//  PianoVC.swift
-//  MVC-Template
+//  ViewController.swift
+//  MC2
 //
-//  Created by Mutiara Prasetyo on 09/06/21.
+//  Created by Nico Christian on 28/05/21.
 //
 
 import UIKit
+import AVFoundation
 
 let middleViewTag = 0
 let mainViewTag = 1
@@ -16,31 +18,31 @@ let chordLearnTag = 4
 let CToECellWidth: CGFloat = 240
 let FToBCellWidth: CGFloat = 320
 let fullNotesCellWidth: CGFloat = 560
-let numberOfOctaves = 2
+let numberOfOctaves = 3
 
-class PianoVC: UIViewController {
+class ViewController: UIViewController {
+
+    var audioPlayer: AVAudioPlayer?
+    var soundFilename: [String] = []
+    var previousView: UIView?
+    var rootNote = "C"
+    var score = 0
+    var correctAnswer = getScaleAnswer(from: "C")
+    var isLearningScale = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "FullNotesCell", bundle: .main), forCellWithReuseIdentifier: "FullNotesCell")
+        collectionView.register(UINib(nibName: "C", bundle: .main), forCellWithReuseIdentifier: "CCell")
         collectionViewSetup()
-        
+        initializeSoundFilename()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         setupMiddleView()
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let point = touches.first?.location(in: collectionView),
-//              let indexPath = collectionView.indexPathForItem(at: point),
-//              let cell = collectionView.cellForItem(at: indexPath) as? FullNotesCell,
-//              let subview = cell.hitTest(point, with: event)
-//        else { return }
-//        subview.backgroundColor = .red
-//    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var middleView: UIView!
@@ -53,21 +55,28 @@ class PianoVC: UIViewController {
         let mainMenuView = MainMenu()
 //        mainMenuView.delegate = self
         mainMenuView.tag = mainViewTag
+        previousView = mainMenuView
         addMiddleView(with: mainMenuView, tag: mainViewTag)
         
     }
     func removeMiddleView(tag: Int) {
         guard let viewToRemove = middleView.viewWithTag(tag) else { return }
+        previousView = viewToRemove
         viewToRemove.removeFromSuperview()
     }
     func addMiddleView(with subview: UIView, tag: Int) {
         subview.tag = tag
         subview.translatesAutoresizingMaskIntoConstraints = false
+        subview.backgroundColor = .white
+        subview.layer.cornerRadius = 16
         middleView.addSubview(subview)
-        subview.topAnchor.constraint(equalTo: middleView.topAnchor).isActive = true
-        subview.leadingAnchor.constraint(equalTo: middleView.leadingAnchor).isActive = true
-        subview.trailingAnchor.constraint(equalTo: middleView.trailingAnchor).isActive = true
-        subview.bottomAnchor.constraint(equalTo: middleView.bottomAnchor).isActive = true
+        
+        NSLayoutConstraint.activate([
+            subview.topAnchor.constraint(equalTo: middleView.topAnchor),
+            subview.leadingAnchor.constraint(equalTo: middleView.leadingAnchor),
+            subview.trailingAnchor.constraint(equalTo: middleView.trailingAnchor),
+            subview.bottomAnchor.constraint(equalTo: middleView.bottomAnchor)
+        ])
     }
     
     
@@ -77,6 +86,7 @@ class PianoVC: UIViewController {
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
+        collectionView.reloadData()
     }
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         collectionView.setContentOffset(CGPoint(x: Int(sender.value), y: 0), animated: false)
@@ -84,42 +94,116 @@ class PianoVC: UIViewController {
     @IBAction func toggleNoteDisplay(_ sender: UISwitch) {
         collectionView.reloadData()
     }
+    @IBAction func returnToPreviousView(_ sender: UIButton) {
+        addMiddleView(with: previousView ?? MainMenu(), tag: 1)
+        isLearningScale = false
+    }
+    
+    func initializeSoundFilename() {
+        for index in 0 ..< 24 {
+            soundFilename.append("\(PianoModel.fullNotes[index]) - \(index > 11 ? "2" : "1")")
+        }
+        soundFilename.append("C - 3")
+    }
+    
+    func playSound(key: Int) {
+        guard let pathToSound = Bundle.main.path(forResource: soundFilename[key], ofType: "wav") else { return }
+        let url = URL(fileURLWithPath: pathToSound)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        } catch {
+            print("error playing sound")
+        }
+    }
+    
+    func generateGesture(notePressed: Int, noteLabel: UILabel, noteView: UIView) -> NoteLongPressGesture {
+        let customGesture = NoteLongPressGesture()
+        customGesture.minimumPressDuration = 0.001
+        customGesture.notePressed = notePressed
+        customGesture.noteLabel = noteLabel
+        customGesture.noteView = noteView
+        customGesture.addTarget(self, action: #selector(pianoNotePressed(_:)))
+        return customGesture
+    }
 }
 
-extension PianoVC: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfOctaves
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let fullNotesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FullNotesCell", for: indexPath) as? FullNotesCell,
-              var rootNoteIndex = PianoModel.fullNotes.firstIndex(of: "C")
-        else { return UICollectionViewCell() }
+        if indexPath.row < 2 {
+            guard let fullNotesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FullNotesCell", for: indexPath) as? FullNotesCell,
+                  var rootNoteIndex = PianoModel.fullNotes.firstIndex(of: rootNote)
+            else { return UICollectionViewCell() }
+            
+            for index in 0 ..< 17 {
+                fullNotesCell.noteLabels[index].isHidden = !noteDisplayToggle.isOn
+            }
+            for index in 0 ..< 12 {
+                fullNotesCell.noteViews[index].addGestureRecognizer(generateGesture(notePressed: indexPath.row == 0 ? index : index + 12, noteLabel: fullNotesCell.noteLabels[index], noteView: fullNotesCell.noteViews[index]))
+            }
+            for index in 0 ..< 8 {
+                fullNotesCell.numericNoteLabels[rootNoteIndex].isHidden = !numericNoteDisplayToggle.isOn
+                fullNotesCell.numericNoteLabels[rootNoteIndex].text = "\(index)"
+                rootNoteIndex += PianoModel.intervals[index]
+                if rootNoteIndex > 11 { rootNoteIndex -= 12 }
+            }
+            return fullNotesCell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CCell", for: indexPath) as? C else { return UICollectionViewCell() }
+            cell.noteLabel.isHidden = !noteDisplayToggle.isOn
+            cell.numericNoteLabel.isHidden = !numericNoteDisplayToggle.isOn
+            cell.noteView.addGestureRecognizer(generateGesture(notePressed: 24, noteLabel: cell.noteLabel, noteView: cell.noteView))
+            return cell
+        }
         
-        for index in 0 ..< 17 {
-            fullNotesCell.noteLabels[index].isHidden = !noteDisplayToggle.isOn
+    }
+    
+    @objc func pianoNotePressed(_ sender: NoteLongPressGesture) {
+        guard let notePressed = sender.notePressed,
+              let noteView = sender.noteView,
+              let noteLabel = sender.noteLabel
+        else { return }
+        
+        if sender.state == .began {
+            playSound(key: notePressed)
+            noteLabel.textColor = .white
+            noteView.backgroundColor = Purple
+            
         }
-        for index in 0 ..< 8 {
-            fullNotesCell.numericNoteLabels[rootNoteIndex].isHidden = !numericNoteDisplayToggle.isOn
-            fullNotesCell.numericNoteLabels[rootNoteIndex].text = "\(index)"
-            rootNoteIndex += PianoModel.intervals[index]
-            if rootNoteIndex > 11 { rootNoteIndex -= 12 }
+        else if sender.state == .ended {
+            sender.noteView?.backgroundColor = PianoModel.blackNotesTag.firstIndex(of: notePressed) != nil ? .black : .white
+            noteLabel.textColor = PianoModel.blackNotesTag.firstIndex(of: notePressed) != nil ? .white : .black
+            if isLearningScale {
+                if notePressed == correctAnswer[score] { score += 1 }
+                if score == 8 {
+                    score = 0
+                    let alert = UIAlertController(title: "Hooray!", message: "Good job, you have played the C Major Scale", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Let's learn some more", style: .default, handler: nil)
+                    alert.addAction(ok)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
-        return fullNotesCell
     }
 }
 
-extension PianoVC: UICollectionViewDelegateFlowLayout {
+extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: fullNotesCellWidth, height: collectionView.frame.height)
+        return indexPath.row < 2 ? CGSize(width: fullNotesCellWidth, height: collectionView.frame.height) : CGSize(width: 80, height: collectionView.frame.height)
     }
 }
 
-extension PianoVC: NavigationDelegate {
+extension ViewController: NavigationDelegate {
     func navigateToScale() {
         removeMiddleView(tag: mainViewTag)
         let scaleView = ScalePage()
 //        scaleView.delegate = self
+        isLearningScale = true
         addMiddleView(with: scaleView, tag: scaleViewTag)
     }
     func navigateToMain() {
@@ -129,4 +213,3 @@ extension PianoVC: NavigationDelegate {
         addMiddleView(with: mainView, tag: mainViewTag)
     }
 }
-
