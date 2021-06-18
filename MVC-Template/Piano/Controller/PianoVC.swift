@@ -20,7 +20,7 @@ let FToBCellWidth: CGFloat = 320
 let fullNotesCellWidth: CGFloat = 560
 let numberOfOctaves = 3
 
-class ViewController: UIViewController {
+class PianoVC: UIViewController {
 
     var audioPlayer: AVAudioPlayer?
     var soundFilename: [String] = []
@@ -129,7 +129,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension PianoVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfOctaves
     }
@@ -192,13 +192,13 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension PianoVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return indexPath.row < 2 ? CGSize(width: fullNotesCellWidth, height: collectionView.frame.height) : CGSize(width: 80, height: collectionView.frame.height)
     }
 }
 
-extension ViewController: NavigationDelegate {
+extension PianoVC: NavigationDelegate {
     func navigateToScale() {
         removeMiddleView(tag: mainViewTag)
         let scaleView = ScalePage()
