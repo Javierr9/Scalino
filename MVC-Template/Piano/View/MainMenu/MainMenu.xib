@@ -15,13 +15,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YY-qr-kYY">
-                    <rect key="frame" x="269" y="52" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="269" y="52" width="42" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXX-4F-tpa" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
-                    <rect key="frame" x="64" y="106" width="46" height="30"/>
+                    <rect key="frame" x="64" y="109" width="46" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -31,6 +32,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJt-QS-G08" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
                     <rect key="frame" x="475" y="94" width="46" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -39,7 +41,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYa-EC-xcM" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
-                    <rect key="frame" x="265" y="106" width="46" height="30"/>
+                    <rect key="frame" x="265" y="109" width="46" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -47,9 +50,9 @@
                         <action selector="learnButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="yEa-Tl-V0t"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-YO-5DX">
-                    <rect key="frame" x="269" y="8" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-YO-5DX">
+                    <rect key="frame" x="257" y="15" width="66" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" red="0.3411764705882353" green="0.30588235294117649" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -76,7 +79,7 @@
                 <outlet property="testMyScalesButton" destination="qXX-4F-tpa" id="IMv-Cl-f8H"/>
                 <outlet property="titleLabel" destination="WkK-YO-5DX" id="erp-dB-qR8"/>
             </connections>
-            <point key="canvasLocation" x="131.91964285714286" y="114.49275362318842"/>
+            <point key="canvasLocation" x="130.76923076923077" y="114.45497630331754"/>
         </view>
     </objects>
     <resources>
