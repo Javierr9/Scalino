@@ -34,6 +34,9 @@ class ChordPage: UIView {
         addSubview(ChordPageView)
         ChordPageView.frame = bounds
         ChordPageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+        let chordnames = getChordNames(from: "C")
+        for index in 0..<7 {
+            Buttons[index].titleLabel?.text = chordnames[index]
+        }
     }
 }
