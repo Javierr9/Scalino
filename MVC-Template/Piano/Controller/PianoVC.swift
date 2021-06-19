@@ -111,15 +111,11 @@ class PianoVC: UIViewController {
     }
     
     func playSound(key: Int) {
-        guard let pathToSound = Bundle.main.path(forResource: soundFilename[key], ofType: "wav") else { return }
-        let url = URL(fileURLWithPath: pathToSound)
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
-        } catch {
-            print("error playing sound")
-        }
+        if let url = Bundle.main.url(forResource: "\(key+1)", withExtension: "wav")     {
+                    let player = AVAudioPlayerPool().playerWithURL(url: url)
+                    player?.play()
+                }
+       
     }
     
     func generateGesture(notePressed: Int, noteLabel: UILabel, noteView: UIView) -> NoteLongPressGesture {
