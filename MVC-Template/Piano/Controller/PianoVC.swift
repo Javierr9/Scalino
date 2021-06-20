@@ -244,4 +244,8 @@ extension PianoVC: NavigationDelegate, ScalePageDelegate {
         rootNote = rootScale
         collectionView.reloadData()
     }
+    
+    func didTapLearnChord(rootScale: String) {
+        print(rootScale)
+    }
 }

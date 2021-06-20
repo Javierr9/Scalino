@@ -13,6 +13,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="c6o-me-eB2"/>
                 <outlet property="guidanceMajorScalesLabel" destination="wOf-HZ-Eq7" id="d7O-MB-329"/>
                 <outlet property="infoMajorScalesLabel" destination="PZc-pm-gED" id="ACK-y4-q1w"/>
+                <outlet property="learnChordsButton" destination="4pV-du-6Jb" id="tU9-5N-frN"/>
                 <outlet property="titleMajorScalesLabel" destination="5Ab-W0-uAh" id="b9I-J5-hc4"/>
             </connections>
         </placeholder>
@@ -55,12 +56,22 @@
                     <color key="textColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pV-du-6Jb" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="324" y="92" width="156" height="30"/>
+                    <state key="normal" title="Start Learning Chords!"/>
+                    <connections>
+                        <action selector="learnChordsButtonTapped:" destination="-1" eventType="touchUpInside" id="3vI-xs-pWf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="4pV-du-6Jb" secondAttribute="bottom" constant="22" id="22c-dx-gqI"/>
                 <constraint firstAttribute="trailing" secondItem="wOf-HZ-Eq7" secondAttribute="trailing" constant="24" id="6ms-tJ-hG6"/>
+                <constraint firstAttribute="trailing" secondItem="4pV-du-6Jb" secondAttribute="trailing" constant="100" id="9Dx-6S-Sos"/>
                 <constraint firstItem="5Ab-W0-uAh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="H5a-sX-Zfs"/>
                 <constraint firstItem="PZc-pm-gED" firstAttribute="leading" secondItem="wOf-HZ-Eq7" secondAttribute="leading" id="Ooi-Ed-8gU"/>
+                <constraint firstItem="4pV-du-6Jb" firstAttribute="leading" secondItem="XuB-cT-lmg" secondAttribute="trailing" constant="100" id="RjW-Hs-PWb"/>
                 <constraint firstAttribute="bottom" secondItem="wOf-HZ-Eq7" secondAttribute="bottom" constant="16" id="SOx-GU-gg4"/>
                 <constraint firstAttribute="trailing" secondItem="PZc-pm-gED" secondAttribute="trailing" constant="24" id="Y2c-DU-OVD"/>
                 <constraint firstItem="XuB-cT-lmg" firstAttribute="leading" secondItem="5Ab-W0-uAh" secondAttribute="leading" id="joc-FL-FK6"/>

@@ -12,12 +12,14 @@ class ScalePage: UIView {
     let scaleLabels:[String] = ["C", "G", "D", "A", "E", "B", "F", "F#", "C#", "Bb", "Eb", "Ab"]
     let numberOfCells = 12
     let cellSize: CGFloat = 59
+    var selectedScale = -1
     
     @IBOutlet weak var titleMajorScalesLabel: UILabel!
     @IBOutlet weak var infoMajorScalesLabel: UILabel!
     @IBOutlet weak var guidanceMajorScalesLabel: UILabel!
     @IBOutlet weak var collectionViewScalePage: UICollectionView!
     
+    @IBOutlet weak var learnChordsButton: UIButton!
     @IBOutlet var contentView: UIView!
     
     public weak var navigationDelegate: NavigationDelegate?
@@ -47,6 +49,25 @@ class ScalePage: UIView {
         collectionViewScalePage.dataSource = self
         collectionViewScalePage.delegate = self
     }
+    
+    @IBAction func learnChordsButtonTapped(_ sender: UIButton) {
+        scalePageDelegate?.didTapLearnChord?(rootScale: scaleLabels[selectedScale])
+    }
+    public func hideScaleDescription() {
+        infoMajorScalesLabel.isHidden = true
+        guidanceMajorScalesLabel.isHidden = true
+    }
+    
+    func changeIntoScalePrompt(rootNote: String) {
+        guidanceMajorScalesLabel.isHidden = true
+        learnChordsButton.isHidden = false
+        let fullNotes = getNotesInScale(from: rootNote)
+        let notes = fullNotes[0 ..< 8]
+        infoMajorScalesLabel.textAlignment = .center
+        infoMajorScalesLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        infoMajorScalesLabel.text = "Try playing "
+        for index in 0 ..< 8 { infoMajorScalesLabel.text! += index == 7 ? "\(notes[index])" : "\(notes[index]) - "}
+    }
 }
 
 
@@ -74,6 +95,8 @@ extension ScalePage: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? RoundCell else { return }
         cell.roundCellLabel.textColor = .white
+        changeIntoScalePrompt(rootNote: scaleLabels[indexPath.row])
+        selectedScale = indexPath.row
         scalePageDelegate?.didSelectScale?(rootScale: scaleLabels[indexPath.row])
     }
 }

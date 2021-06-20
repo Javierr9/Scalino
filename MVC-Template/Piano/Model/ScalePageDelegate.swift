@@ -9,4 +9,5 @@ import Foundation
 
 @objc protocol ScalePageDelegate {
     @objc optional func didSelectScale(rootScale: String)
+    @objc optional func didTapLearnChord(rootScale: String)
 }
