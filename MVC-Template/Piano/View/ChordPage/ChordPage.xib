@@ -1,18 +1,127 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChordPage" customModule="MVC_Template" customModuleProvider="target">
+            <connections>
+                <outlet property="ChordPageView" destination="iN0-l3-epB" id="yRk-g0-BW0"/>
+                <outlet property="Title" destination="wCi-6c-6cz" id="hVD-Pk-7sB"/>
+                <outletCollection property="Buttons" destination="CiN-LB-AWP" collectionClass="NSMutableArray" id="4fG-dT-1Vh"/>
+                <outletCollection property="Buttons" destination="YjA-Dq-cmT" collectionClass="NSMutableArray" id="8j1-Gb-q1V"/>
+                <outletCollection property="Buttons" destination="7AE-H1-rHz" collectionClass="NSMutableArray" id="XoY-qx-JKg"/>
+                <outletCollection property="Buttons" destination="rdS-7b-b13" collectionClass="NSMutableArray" id="ogR-XG-MK4"/>
+                <outletCollection property="Buttons" destination="cDE-vw-Esi" collectionClass="NSMutableArray" id="GYz-bQ-7lO"/>
+                <outletCollection property="Buttons" destination="hwe-S4-XGg" collectionClass="NSMutableArray" id="bQm-p9-2Wh"/>
+                <outletCollection property="Buttons" destination="R54-jr-vEM" collectionClass="NSMutableArray" id="a8e-wL-ZgT"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="580" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCi-6c-6cz">
+                    <rect key="frame" x="269" y="8" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiN-LB-AWP" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="166" y="57" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="zX6-Cc-ggT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjA-Dq-cmT" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="236" y="57" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="4Hz-q6-igR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-H1-rHz" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="298" y="57" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="EkM-Yh-Hgu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-7b-b13" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="368" y="57" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="53p-8c-MDi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDE-vw-Esi" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="166" y="95" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="COc-6w-DFC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R54-jr-vEM" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="298" y="95" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="Dja-Av-KiC"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82S-no-jg1">
+                    <rect key="frame" x="290" y="57" width="0.0" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwe-S4-XGg" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
+                    <rect key="frame" x="236" y="95" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="Od3-Iz-yf3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="YjA-Dq-cmT" firstAttribute="leading" secondItem="CiN-LB-AWP" secondAttribute="trailing" constant="24" id="1n0-nq-pmd"/>
+                <constraint firstItem="rdS-7b-b13" firstAttribute="leading" secondItem="7AE-H1-rHz" secondAttribute="trailing" constant="24" id="2dR-k3-51w"/>
+                <constraint firstItem="hwe-S4-XGg" firstAttribute="leading" secondItem="YjA-Dq-cmT" secondAttribute="leading" id="2me-8r-bPr"/>
+                <constraint firstItem="wCi-6c-6cz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="8WB-j4-qRC"/>
+                <constraint firstItem="cDE-vw-Esi" firstAttribute="top" secondItem="CiN-LB-AWP" secondAttribute="bottom" constant="8" id="CFj-4M-bNq"/>
+                <constraint firstItem="CiN-LB-AWP" firstAttribute="leading" secondItem="cDE-vw-Esi" secondAttribute="leading" id="F2Y-l3-BQ8"/>
+                <constraint firstItem="82S-no-jg1" firstAttribute="bottom" secondItem="CiN-LB-AWP" secondAttribute="bottom" id="Fmy-r6-AjK"/>
+                <constraint firstItem="CiN-LB-AWP" firstAttribute="trailing" secondItem="cDE-vw-Esi" secondAttribute="trailing" id="G5y-0Y-bQH"/>
+                <constraint firstItem="82S-no-jg1" firstAttribute="bottom" secondItem="YjA-Dq-cmT" secondAttribute="bottom" id="GgA-oT-Abj"/>
+                <constraint firstItem="82S-no-jg1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KGi-La-mlb"/>
+                <constraint firstItem="7AE-H1-rHz" firstAttribute="bottom" secondItem="82S-no-jg1" secondAttribute="bottom" id="KHJ-Mq-StW"/>
+                <constraint firstItem="82S-no-jg1" firstAttribute="leading" secondItem="YjA-Dq-cmT" secondAttribute="trailing" constant="8" id="M8H-SQ-oWT"/>
+                <constraint firstItem="rdS-7b-b13" firstAttribute="bottom" secondItem="CiN-LB-AWP" secondAttribute="bottom" id="NGk-cH-XDs"/>
+                <constraint firstItem="82S-no-jg1" firstAttribute="top" secondItem="YjA-Dq-cmT" secondAttribute="top" id="QYg-wm-aUA"/>
+                <constraint firstItem="82S-no-jg1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wo8-4J-vof"/>
+                <constraint firstItem="hwe-S4-XGg" firstAttribute="top" secondItem="YjA-Dq-cmT" secondAttribute="bottom" constant="8" id="bgj-Tn-Hn3"/>
+                <constraint firstItem="7AE-H1-rHz" firstAttribute="trailing" secondItem="R54-jr-vEM" secondAttribute="trailing" id="kGa-Xa-BeG"/>
+                <constraint firstItem="7AE-H1-rHz" firstAttribute="top" secondItem="82S-no-jg1" secondAttribute="top" id="m8C-FR-Syz"/>
+                <constraint firstItem="7AE-H1-rHz" firstAttribute="leading" secondItem="R54-jr-vEM" secondAttribute="leading" id="rJf-Hv-W9t"/>
+                <constraint firstItem="7AE-H1-rHz" firstAttribute="leading" secondItem="82S-no-jg1" secondAttribute="trailing" constant="8" id="rRs-Ba-t4L"/>
+                <constraint firstItem="R54-jr-vEM" firstAttribute="top" secondItem="7AE-H1-rHz" secondAttribute="bottom" constant="8" id="s2h-zs-f0f"/>
+                <constraint firstItem="wCi-6c-6cz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wGi-o6-2Ae"/>
+                <constraint firstItem="rdS-7b-b13" firstAttribute="top" secondItem="CiN-LB-AWP" secondAttribute="top" id="wbN-KA-qbj"/>
+                <constraint firstItem="82S-no-jg1" firstAttribute="top" secondItem="CiN-LB-AWP" secondAttribute="top" id="xGj-Qu-GFc"/>
+                <constraint firstItem="hwe-S4-XGg" firstAttribute="trailing" secondItem="YjA-Dq-cmT" secondAttribute="trailing" id="zlb-wS-Ceo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="106.63507109004739" y="107.69230769230769"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
