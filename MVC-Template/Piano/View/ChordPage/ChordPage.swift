@@ -11,9 +11,11 @@ class ChordPage: UIView {
 
     @IBOutlet var Title: UILabel!
     @IBOutlet var Buttons: [UIButton]!
+    var selectedScale = ""
+    public weak var chordPageDelegate: ChordPageDelegate?
     
     @IBAction func buttonsTap(_sender: UIButton){
-        
+        chordPageDelegate?.didSelectChord?(chord: selectedScale)
     }
 
     @IBOutlet weak var ChordPageView: UIView!
@@ -34,9 +36,16 @@ class ChordPage: UIView {
         addSubview(ChordPageView)
         ChordPageView.frame = bounds
         ChordPageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        let chordnames = getChordNames(from: "C")
-        for index in 0..<7 {
-            Buttons[index].titleLabel?.text = chordnames[index]
+        Title.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        Title.textColor = Purple
+    }
+    public func configureButtonLabels(chordNames: [String]) {
+        for index in 0 ..< 7 {
+            Buttons[index].setTitle(chordNames[index], for: .normal)
         }
+    }
+    public func configureTitleLabel(rootNote: String) {
+        selectedScale = rootNote
+        Title.text = "CHORDS IN \(rootNote) MAJOR"
     }
 }

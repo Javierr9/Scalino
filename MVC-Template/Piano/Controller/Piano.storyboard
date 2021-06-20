@@ -45,7 +45,7 @@
                                     <action selector="toggleNoteDisplay:" destination="ZY2-RK-Z2G" eventType="valueChanged" id="XOi-4K-Isg"/>
                                 </connections>
                             </switch>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="roF-S3-AEN" customClass="CustomSlider" customModule="MC2" customModuleProvider="target">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="roF-S3-AEN" customClass="CustomSlider" customModule="MVC_Template" customModuleProvider="target">
                                 <rect key="frame" x="228" y="157" width="389" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -108,6 +108,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="F0Z-I8-5sa" id="eVd-3K-mEw"/>
+                        <outlet property="mainBackButton" destination="Wz8-LZ-lcH" id="hH9-hO-96f"/>
                         <outlet property="middleView" destination="K4t-o7-h9D" id="hbb-bJ-H5z"/>
                         <outlet property="noteDisplayToggle" destination="ais-0z-dEC" id="WSX-Ab-kmZ"/>
                         <outlet property="numericNoteDisplayToggle" destination="ODW-vX-vJ7" id="vMC-89-VfV"/>
@@ -115,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKI-Jo-ddN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="112"/>
+            <point key="canvasLocation" x="11.383928571428571" y="111.59420289855073"/>
         </scene>
     </scenes>
     <resources>

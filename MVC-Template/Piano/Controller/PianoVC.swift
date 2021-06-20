@@ -13,7 +13,7 @@ let middleViewTag = 0
 let mainViewTag = 1
 let scaleViewTag = 2
 let letsLearnTag = 3
-let chordLearnTag = 4
+let chordViewTag = 4
 
 let CToECellWidth: CGFloat = 240
 let FToBCellWidth: CGFloat = 320
@@ -30,6 +30,7 @@ class PianoVC: UIViewController {
     var correctAnswer = getScaleAnswer(from: "C")
     var isLearningScale = false
     let center = UNUserNotificationCenter.current()
+    var viewHierarchy: [UIView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,6 @@ class PianoVC: UIViewController {
         collectionView.register(UINib(nibName: "FullNotesCell", bundle: .main), forCellWithReuseIdentifier: "FullNotesCell")
         collectionView.register(UINib(nibName: "C", bundle: .main), forCellWithReuseIdentifier: "CCell")
         collectionViewSetup()
-        initializeSoundFilename()
         //get notification
         registerLocal()
         scheduleLocal()
@@ -52,6 +52,7 @@ class PianoVC: UIViewController {
     @IBOutlet weak var middleView: UIView!
     @IBOutlet weak var noteDisplayToggle: UISwitch!
     @IBOutlet weak var numericNoteDisplayToggle: UISwitch!
+    @IBOutlet weak var mainBackButton: backButton!
     
     
     func setupMiddleView() {
@@ -59,30 +60,40 @@ class PianoVC: UIViewController {
         let mainMenuView = MainMenu()
         mainMenuView.delegate = self
         mainMenuView.tag = mainViewTag
-        previousView = mainMenuView
-        addMiddleView(with: mainMenuView, tag: mainViewTag)
-        
-    }
-    func removeMiddleView(tag: Int) {
-        guard let viewToRemove = middleView.viewWithTag(tag) else { return }
-        previousView = viewToRemove
-        viewToRemove.removeFromSuperview()
-    }
-    func addMiddleView(with subview: UIView, tag: Int) {
-        subview.tag = tag
-        subview.translatesAutoresizingMaskIntoConstraints = false
-        subview.backgroundColor = .white
-        subview.layer.cornerRadius = 16
-        middleView.addSubview(subview)
-        
-        NSLayoutConstraint.activate([
-            subview.topAnchor.constraint(equalTo: middleView.topAnchor),
-            subview.leadingAnchor.constraint(equalTo: middleView.leadingAnchor),
-            subview.trailingAnchor.constraint(equalTo: middleView.trailingAnchor),
-            subview.bottomAnchor.constraint(equalTo: middleView.bottomAnchor)
-        ])
+        appendView(view: mainMenuView)
     }
     
+    func appendView(view: UIView) {
+        mainBackButton.isHidden = false
+        viewHierarchy.append(view)
+        reloadMiddleView()
+    }
+    
+    func removeView() {
+        viewHierarchy.removeLast()
+        reloadMiddleView()
+    }
+    
+    func reloadMiddleView() {
+        if viewHierarchy.count <= 1 {
+            mainBackButton.isHidden = true
+            rootNote = "C"
+            collectionView.reloadData()
+        }
+        if let subview = viewHierarchy.last {
+            subview.translatesAutoresizingMaskIntoConstraints = false
+            subview.backgroundColor = .white
+            subview.layer.cornerRadius = 16
+            middleView.addSubview(subview)
+            
+            NSLayoutConstraint.activate([
+                subview.topAnchor.constraint(equalTo: middleView.topAnchor),
+                subview.leadingAnchor.constraint(equalTo: middleView.leadingAnchor),
+                subview.trailingAnchor.constraint(equalTo: middleView.trailingAnchor),
+                subview.bottomAnchor.constraint(equalTo: middleView.bottomAnchor)
+            ])
+        }
+    }
     
     func collectionViewSetup() {
         let layout = UICollectionViewFlowLayout()
@@ -99,22 +110,14 @@ class PianoVC: UIViewController {
         collectionView.reloadData()
     }
     @IBAction func returnToPreviousView(_ sender: UIButton) {
-        addMiddleView(with: previousView ?? MainMenu(), tag: 1)
-        isLearningScale = false
-    }
-    
-    func initializeSoundFilename() {
-        for index in 0 ..< 24 {
-            soundFilename.append("\(PianoModel.fullNotes[index]) - \(index > 11 ? "2" : "1")")
-        }
-        soundFilename.append("C - 3")
+        removeView()
     }
     
     func playSound(key: Int) {
-        if let url = Bundle.main.url(forResource: "\(key+1)", withExtension: "wav")     {
-                    let player = AVAudioPlayerPool().playerWithURL(url: url)
-                    player?.play()
-                }
+        if let url = Bundle.main.url(forResource: "\(key+1)", withExtension: "wav") {
+            let player = AVAudioPlayerPool().playerWithURL(url: url)
+            player?.play()
+        }
        
     }
     
@@ -225,19 +228,17 @@ extension PianoVC: UICollectionViewDelegateFlowLayout {
 
 extension PianoVC: NavigationDelegate, ScalePageDelegate {
     func navigateToMain() {
-        removeMiddleView(tag: scaleViewTag)
         let mainView = MainMenu()
         mainView.delegate = self
-        addMiddleView(with: mainView, tag: mainViewTag)
+        mainView.tag = mainViewTag
     }
     
     func navigateToLearnScale() {
-        removeMiddleView(tag: mainViewTag)
         let scaleView = ScalePage()
         scaleView.navigationDelegate = self
         scaleView.scalePageDelegate = self
-        isLearningScale = true
-        addMiddleView(with: scaleView, tag: scaleViewTag)
+        scaleView.tag = scaleViewTag
+        appendView(view: scaleView)
     }
     
     func didSelectScale(rootScale: String) {
@@ -246,6 +247,12 @@ extension PianoVC: NavigationDelegate, ScalePageDelegate {
     }
     
     func didTapLearnChord(rootScale: String) {
-        print(rootScale)
+        let chordPageView = ChordPage()
+        let chordNames = getChordNames(from: rootScale)
+        chordPageView.ChordPageView.backgroundColor = .clear
+        chordPageView.configureButtonLabels(chordNames: chordNames)
+        chordPageView.configureTitleLabel(rootNote: rootScale)
+        chordPageView.tag = chordViewTag
+        appendView(view: chordPageView)
     }
 }
