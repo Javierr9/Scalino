@@ -39,10 +39,18 @@ class PianoVC: UIViewController {
     var currentExercise = 1
     var chordsPlayed: [Int] = []
     var nthChord = 1
-    let chordExercise: [Int] = [0, 1, 2, 3]
-    
+    let chordExercise: [Int] = [0, 2, 4, 6]
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+        return UIRectEdge.bottom
+    }
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "FullNotesCell", bundle: .main), forCellWithReuseIdentifier: "FullNotesCell")
@@ -122,6 +130,7 @@ class PianoVC: UIViewController {
         collectionView.reloadData()
     }
     @IBAction func returnToPreviousView(_ sender: UIButton) {
+        resetQuestions()
         removeView()
     }
     
@@ -185,14 +194,26 @@ class PianoVC: UIViewController {
         print("chords playes: \(chordsPlayed)")
         if isTestChord {
             if correctChord.elementsEqual(chordsPlayed) {
+                if currentExercise == 4 {
+                    currentExercise = 0
+                    let message = "Good Job!"
+                    resetQuestions()
+                    presentAlert(message: message)
+        
+                    return
+                }
+                chordNumber = [1,3,5]
                 let chordNames = getChordNames(from: rootNote)
-                let message = "Correct! Let's move on to the next one!"
+                
                 currentExercise += 1
                 nthChord = chordExercise[currentExercise - 1]
                 for i in 0 ..< 3 { chordNumber[i] += nthChord }
-//                presentAlert(message: message)
+                
                 guard let chordPage = viewHierarchy.last as? ScalePage else { return }
                 chordPage.infoMajorScalesLabel.text = "Play \(chordNames[chordExercise[currentExercise - 1]])"
+                chordPage.guidanceMajorScalesLabel.text = "\(currentExercise)/\(chordExercise.count)"
+                
+               
             }
         } else {
             guard let chordPage = viewHierarchy.last as? ChordPage else { return }
@@ -417,5 +438,11 @@ extension PianoVC: NavigationDelegate, ScalePageDelegate, ChordPageDelegate {
             chordNumber[i] += nthChord
         }
         collectionView.reloadData()
+    }
+    
+    func resetQuestions(){
+        isTestChord = false
+        chordNumber = [1,3,5]
+        currentExercise = 1
     }
 }
