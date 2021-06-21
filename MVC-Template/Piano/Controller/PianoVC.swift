@@ -162,16 +162,17 @@ class PianoVC: UIViewController {
     //schedule notification
     func scheduleLocal() {
         let content = UNMutableNotificationContent()
-        content.title = "title"
-        content.body = "description"
+        content.title = "Scalino"
+        content.body = "Hey! Don't forget to learn today!"
         content.categoryIdentifier = "alarm"
         content.sound = .default
         
         var dateComponents = DateComponents()
-        dateComponents.hour = 11
-        dateComponents.minute = 16
+        dateComponents.calendar = Calendar.current
+        dateComponents.hour = 19
+        dateComponents.minute = 0
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest (identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
     }
@@ -212,7 +213,7 @@ class PianoVC: UIViewController {
                 guard let chordPage = viewHierarchy.last as? ScalePage else { return }
                 chordPage.infoMajorScalesLabel.text = "Play \(chordNames[chordExercise[currentExercise - 1]])"
                 chordPage.guidanceMajorScalesLabel.text = "\(currentExercise)/\(chordExercise.count)"
-                
+                collectionView.reloadData()
                
             }
         } else {
@@ -270,21 +271,20 @@ extension PianoVC: UICollectionViewDataSource {
               let noteView = sender.noteView,
               let noteLabel = sender.noteLabel
         else { return }
+        print("note pressed: \(notePressed), note: \(sender.state)")
         if sender.state == .began {
             playSound(key: notePressed)
             chordsPlayed.append(notePressed)
-            if chordsPlayed.count >= 3 { checkChord() }
             noteLabel.textColor = .white
             noteView.backgroundColor = Purple
+            if chordsPlayed.count == 3 { checkChord() }
         }
         else if sender.state == .ended {
             guard let noteToRemove = chordsPlayed.firstIndex(of: notePressed) else { return }
             chordsPlayed.remove(at: noteToRemove)
-            
 
-            sender.noteView?.backgroundColor = PianoModel.blackNotesTag.firstIndex(of: notePressed) != nil ? .black : .white
+            noteView.backgroundColor = PianoModel.blackNotesTag.firstIndex(of: notePressed) != nil ? .black : .white
             noteLabel.textColor = PianoModel.blackNotesTag.firstIndex(of: notePressed) != nil ? .white : .black
-            
             
             if isLearningScale {
                 if notePressed == correctAnswer[score] { score += 1 }
@@ -310,8 +310,7 @@ extension PianoVC: UICollectionViewDataSource {
                         if currentExercise == 1 {
                             testScaleView.infoMajorScalesLabel.text! += " in reverse!"
                             correctAnswer.reverse()
-                        }
-                        if currentExercise == 2 {
+                        } else if currentExercise == 2 {
                             testScaleView.infoMajorScalesLabel.text = "Try pressing the third note from the \(rootNote) major scale"
                         }
                         presentAlert(message: message)
@@ -399,6 +398,7 @@ extension PianoVC: NavigationDelegate, ScalePageDelegate, ChordPageDelegate {
             let chordNames = getChordNames(from: rootNote)
             currentExercise = 1
             nthChord = chordExercise[currentExercise - 1]
+            isLearningScale = false
             isTestChord = true
             guard let testScaleView = viewHierarchy.last as? ScalePage else { return }
             testScaleView.infoMajorScalesLabel.text = "Play \(chordNames[chordExercise[currentExercise - 1]])"
