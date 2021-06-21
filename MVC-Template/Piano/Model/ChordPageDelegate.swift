@@ -8,5 +8,5 @@
 import Foundation
 
 @objc protocol ChordPageDelegate {
-    @objc optional func didSelectChord(chord: String)
+    @objc optional func didSelectChord(chord: String, nthChord: Int, selectedScale: String)
 }

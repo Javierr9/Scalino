@@ -27,10 +27,13 @@ class PianoVC: UIViewController {
     var previousView: UIView?
     var rootNote = "C"
     var score = 0
-    var correctAnswer = getScaleAnswer(from: "C")
+    var correctAnswer: [Int] = []
     var isLearningScale = false
+    var isShowingChordIndicator = false
     let center = UNUserNotificationCenter.current()
     var viewHierarchy: [UIView] = []
+    var c3Numeric = "1"
+    var chordNumber = [1, 3, 5]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +80,8 @@ class PianoVC: UIViewController {
     func reloadMiddleView() {
         if viewHierarchy.count <= 1 {
             mainBackButton.isHidden = true
+            isLearningScale = false
+            isShowingChordIndicator = false
             rootNote = "C"
             collectionView.reloadData()
         }
@@ -167,6 +172,7 @@ extension PianoVC: UICollectionViewDataSource {
                   var rootNoteIndex = PianoModel.fullNotes.firstIndex(of: rootNote)
             else { return UICollectionViewCell() }
             
+            
             for index in 0 ..< 17 {
                 fullNotesCell.noteLabels[index].isHidden = !noteDisplayToggle.isOn
             }
@@ -177,6 +183,10 @@ extension PianoVC: UICollectionViewDataSource {
             for index in 0 ..< 8 {
                 fullNotesCell.numericNoteLabels[rootNoteIndex].isHidden = !numericNoteDisplayToggle.isOn
                 fullNotesCell.numericNoteLabels[rootNoteIndex].text = "\(index)"
+                if isShowingChordIndicator {
+                    for subindex in 0 ..< 3 { if index == chordNumber[subindex] { fullNotesCell.noteViews[rootNoteIndex].backgroundColor = lightPurple }
+                    }
+                }
                 rootNoteIndex += PianoModel.intervals[index]
                 if rootNoteIndex > 11 { rootNoteIndex -= 12 }
             }
@@ -185,6 +195,7 @@ extension PianoVC: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CCell", for: indexPath) as? C else { return UICollectionViewCell() }
             cell.noteLabel.isHidden = !noteDisplayToggle.isOn
             cell.numericNoteLabel.isHidden = !numericNoteDisplayToggle.isOn
+            cell.numericNoteLabel.text = c3Numeric
             cell.noteView.addGestureRecognizer(generateGesture(notePressed: 24, noteLabel: cell.noteLabel, noteView: cell.noteView))
             return cell
         }
@@ -210,8 +221,8 @@ extension PianoVC: UICollectionViewDataSource {
                 if notePressed == correctAnswer[score] { score += 1 }
                 if score == 8 {
                     score = 0
-                    let alert = UIAlertController(title: "Hooray!", message: "Good job, you have played the C Major Scale", preferredStyle: .alert)
-                    let ok = UIAlertAction(title: "Let's learn some more", style: .default, handler: nil)
+                    let alert = UIAlertController(title: "Hooray!", message: "Good job, you have played the \(rootNote) Major Scale", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Let's learn other scale", style: .default, handler: nil)
                     alert.addAction(ok)
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -226,7 +237,7 @@ extension PianoVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension PianoVC: NavigationDelegate, ScalePageDelegate {
+extension PianoVC: NavigationDelegate, ScalePageDelegate, ChordPageDelegate {
     func navigateToMain() {
         let mainView = MainMenu()
         mainView.delegate = self
@@ -243,6 +254,8 @@ extension PianoVC: NavigationDelegate, ScalePageDelegate {
     
     func didSelectScale(rootScale: String) {
         rootNote = rootScale
+        isLearningScale = true
+        correctAnswer = getScaleAnswer(from: rootNote)
         collectionView.reloadData()
     }
     
@@ -253,6 +266,19 @@ extension PianoVC: NavigationDelegate, ScalePageDelegate {
         chordPageView.configureButtonLabels(chordNames: chordNames)
         chordPageView.configureTitleLabel(rootNote: rootScale)
         chordPageView.tag = chordViewTag
+        chordPageView.chordPageDelegate = self
         appendView(view: chordPageView)
+    }
+    func didSelectChord(chord: String, nthChord: Int, selectedScale: String) {
+        isShowingChordIndicator = true
+        chordNumber = [1,3,5]
+        for i in 0 ..< 3 {
+            chordNumber[i] += nthChord
+            if chordNumber[i] > 7 { chordNumber[i] -= 7 }
+        }
+//        chordNumber[0] += nthChord
+//        chordNumber[1] += nthChord
+//        chordNumber[2] += nthChord
+        collectionView.reloadData()
     }
 }

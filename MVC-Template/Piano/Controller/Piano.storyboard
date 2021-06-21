@@ -22,7 +22,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="scrollableAxes" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F0Z-I8-5sa">
                                 <rect key="frame" x="-8" y="207" width="912" height="207"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ji7-sE-XP5">
                                     <size key="itemSize" width="300" height="195"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -45,9 +45,11 @@
                                     <action selector="toggleNoteDisplay:" destination="ZY2-RK-Z2G" eventType="valueChanged" id="XOi-4K-Isg"/>
                                 </connections>
                             </switch>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="roF-S3-AEN" customClass="CustomSlider" customModule="MVC_Template" customModuleProvider="target">
-                                <rect key="frame" x="228" y="157" width="389" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="roF-S3-AEN" customClass="CustomSlider" customModule="MVC_Template" customModuleProvider="target">
+                                <rect key="frame" x="253.5" y="169" width="389" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="385" id="53e-8T-gQg"/>
+                                </constraints>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="ZY2-RK-Z2G" eventType="valueChanged" id="7Be-gs-2TT"/>
                                 </connections>
@@ -89,8 +91,10 @@
                             <constraint firstItem="F0Z-I8-5sa" firstAttribute="leading" secondItem="Ntz-jg-9FX" secondAttribute="leadingMargin" constant="-24" id="KrZ-dy-naE"/>
                             <constraint firstItem="a6C-1e-B89" firstAttribute="leading" secondItem="ife-jV-4jA" secondAttribute="leading" id="KzZ-6X-anu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ais-0z-dEC" secondAttribute="trailing" constant="18" id="Mc7-1O-im2"/>
+                            <constraint firstItem="roF-S3-AEN" firstAttribute="centerX" secondItem="Ntz-jg-9FX" secondAttribute="centerX" id="Nbc-vt-UQd"/>
                             <constraint firstItem="K4t-o7-h9D" firstAttribute="leading" secondItem="Ntz-jg-9FX" secondAttribute="leading" constant="72" id="Zbq-5f-RaK"/>
                             <constraint firstItem="Wz8-LZ-lcH" firstAttribute="leading" secondItem="Ntz-jg-9FX" secondAttribute="leadingMargin" constant="16" id="a2g-Gu-ueH"/>
+                            <constraint firstItem="F0Z-I8-5sa" firstAttribute="top" secondItem="roF-S3-AEN" secondAttribute="bottom" constant="8" id="aIz-Vm-S1Q"/>
                             <constraint firstAttribute="bottomMargin" secondItem="F0Z-I8-5sa" secondAttribute="bottom" id="cQB-mH-nx5"/>
                             <constraint firstItem="a6C-1e-B89" firstAttribute="trailing" secondItem="ife-jV-4jA" secondAttribute="trailing" id="ceY-aT-4SQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ife-jV-4jA" secondAttribute="trailing" constant="16" id="fds-bB-WfD"/>

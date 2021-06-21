@@ -40,7 +40,7 @@
                         <color key="titleColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="zX6-Cc-ggT"/>
+                        <action selector="buttonsTap:" destination="-1" eventType="touchUpInside" id="EKO-Ap-lK9"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjA-Dq-cmT" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
@@ -52,7 +52,7 @@
                         <color key="titleColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="4Hz-q6-igR"/>
+                        <action selector="buttonsTap:" destination="-1" eventType="touchUpInside" id="puk-4F-iEY"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-H1-rHz" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
@@ -64,7 +64,7 @@
                         <color key="titleColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="EkM-Yh-Hgu"/>
+                        <action selector="buttonsTap:" destination="-1" eventType="touchUpInside" id="dfD-kv-J4W"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-7b-b13" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
@@ -76,7 +76,7 @@
                         <color key="titleColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="53p-8c-MDi"/>
+                        <action selector="buttonsTap:" destination="-1" eventType="touchUpInside" id="T1w-eN-Pbb"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDE-vw-Esi" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
@@ -88,7 +88,7 @@
                         <color key="titleColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="COc-6w-DFC"/>
+                        <action selector="buttonsTap:" destination="-1" eventType="touchUpInside" id="RSm-7U-ctj"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R54-jr-vEM" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
@@ -100,7 +100,7 @@
                         <color key="titleColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="Dja-Av-KiC"/>
+                        <action selector="buttonsTap:" destination="-1" eventType="touchUpInside" id="seF-Fg-oGK"/>
                     </connections>
                 </button>
                 <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwe-S4-XGg" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
@@ -112,7 +112,7 @@
                         <color key="titleColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="buttonsTapWith_sender:" destination="-1" eventType="touchUpInside" id="Od3-Iz-yf3"/>
+                        <action selector="buttonsTap:" destination="-1" eventType="touchUpInside" id="N1u-Vg-Poh"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82S-no-jg1">

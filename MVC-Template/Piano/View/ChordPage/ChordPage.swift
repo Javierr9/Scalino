@@ -14,8 +14,10 @@ class ChordPage: UIView {
     var selectedScale = ""
     public weak var chordPageDelegate: ChordPageDelegate?
     
-    @IBAction func buttonsTap(_sender: UIButton){
-        chordPageDelegate?.didSelectChord?(chord: selectedScale)
+    @IBAction func buttonsTap(_ sender: UIButton){
+        guard let selectedChord = sender.titleLabel?.text
+        else { return }
+        chordPageDelegate?.didSelectChord?(chord: selectedChord, nthChord: sender.tag, selectedScale: selectedScale)
     }
 
     @IBOutlet weak var ChordPageView: UIView!

@@ -62,14 +62,14 @@
 		452207872670B18F00C8D8D6 /* PianoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452207862670B18F00C8D8D6 /* PianoView.swift */; };
 		A9976049267C5B83003D04E3 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9976047267C5B83003D04E3 /* C.swift */; };
 		A997604A267C5B83003D04E3 /* C.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9976048267C5B83003D04E3 /* C.xib */; };
-		CC3C0D572676E39D004265F2 /* CollectionViewScalePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */; };
-		CC3C0D582676E39D004265F2 /* CollectionViewScalePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */; };
 		A997604C267C6F9C003D04E3 /* ScalePageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997604B267C6F9C003D04E3 /* ScalePageDelegate.swift */; };
 		A997604E267C6FE0003D04E3 /* ChordPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997604D267C6FE0003D04E3 /* ChordPageDelegate.swift */; };
 		A9F7A3F0267849F4006B62BB /* NavigationDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */; };
 		A9F7A4012678D43F006B62BB /* FullNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A3FE2678D43F006B62BB /* FullNotesCell.swift */; };
 		A9F7A4022678D43F006B62BB /* FullNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F7A3FF2678D43F006B62BB /* FullNotesCell.xib */; };
 		A9F7A4032678D43F006B62BB /* NoteLongPressGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F7A4002678D43F006B62BB /* NoteLongPressGesture.swift */; };
+		CC3C0D572676E39D004265F2 /* CollectionViewScalePageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */; };
+		CC3C0D582676E39D004265F2 /* CollectionViewScalePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,14 +130,14 @@
 		452207862670B18F00C8D8D6 /* PianoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoView.swift; sourceTree = "<group>"; };
 		A9976047267C5B83003D04E3 /* C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = C.swift; sourceTree = "<group>"; };
 		A9976048267C5B83003D04E3 /* C.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = C.xib; sourceTree = "<group>"; };
-		CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewScalePageCell.swift; sourceTree = "<group>"; };
-		CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewScalePageCell.xib; sourceTree = "<group>"; };
 		A997604B267C6F9C003D04E3 /* ScalePageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalePageDelegate.swift; sourceTree = "<group>"; };
 		A997604D267C6FE0003D04E3 /* ChordPageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordPageDelegate.swift; sourceTree = "<group>"; };
 		A9F7A3EF267849F4006B62BB /* NavigationDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegates.swift; sourceTree = "<group>"; };
 		A9F7A3FE2678D43F006B62BB /* FullNotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullNotesCell.swift; sourceTree = "<group>"; };
 		A9F7A3FF2678D43F006B62BB /* FullNotesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullNotesCell.xib; sourceTree = "<group>"; };
 		A9F7A4002678D43F006B62BB /* NoteLongPressGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteLongPressGesture.swift; sourceTree = "<group>"; };
+		CC3C0D552676E39D004265F2 /* CollectionViewScalePageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewScalePageCell.swift; sourceTree = "<group>"; };
+		CC3C0D562676E39D004265F2 /* CollectionViewScalePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewScalePageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -675,7 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 665XP63X44;
+				DEVELOPMENT_TEAM = 272LRZQ89D;
 				INFOPLIST_FILE = "$(SRCROOT)/Default Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -694,7 +694,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 665XP63X44;
+				DEVELOPMENT_TEAM = 272LRZQ89D;
 				INFOPLIST_FILE = "$(SRCROOT)/Default Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
