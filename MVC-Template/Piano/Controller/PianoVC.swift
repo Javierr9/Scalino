@@ -21,7 +21,7 @@ let fullNotesCellWidth: CGFloat = 560
 let numberOfOctaves = 3
 
 class PianoVC: UIViewController {
-
+    
     var audioPlayer: AVAudioPlayer?
     var soundFilename: [String] = []
     var previousView: UIView?
@@ -123,7 +123,7 @@ class PianoVC: UIViewController {
             let player = AVAudioPlayerPool().playerWithURL(url: url)
             player?.play()
         }
-       
+        
     }
     
     func generateGesture(notePressed: Int, noteLabel: UILabel, noteView: UIView) -> NoteLongPressGesture {
@@ -165,7 +165,7 @@ extension PianoVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfOctaves
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row < 2 {
             guard let fullNotesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FullNotesCell", for: indexPath) as? FullNotesCell,
@@ -179,12 +179,28 @@ extension PianoVC: UICollectionViewDataSource {
             for index in 0 ..< 12 {
                 fullNotesCell.noteViews[index].addGestureRecognizer(generateGesture(notePressed: indexPath.row == 0 ? index : index + 12, noteLabel: fullNotesCell.noteLabels[index], noteView: fullNotesCell.noteViews[index]))
                 fullNotesCell.numericNoteLabels[index].isHidden = true
+                fullNotesCell.noteViews[index].backgroundColor = PianoModel.blackNotesTag.firstIndex(of: index) != nil ? .black : .white
             }
             for index in 0 ..< 8 {
                 fullNotesCell.numericNoteLabels[rootNoteIndex].isHidden = !numericNoteDisplayToggle.isOn
                 fullNotesCell.numericNoteLabels[rootNoteIndex].text = "\(index)"
                 if isShowingChordIndicator {
-                    for subindex in 0 ..< 3 { if index == chordNumber[subindex] { fullNotesCell.noteViews[rootNoteIndex].backgroundColor = lightPurple }
+                    for subindex in 0 ..< 3 {
+                        print(chordNumber)
+                        if index == (chordNumber[subindex] > 7 ? chordNumber[subindex] - 7 : chordNumber[subindex]) {
+                      
+                            if indexPath.row == 0 && chordNumber[subindex] <= 7{
+                                fullNotesCell.noteViews[rootNoteIndex].backgroundColor = lightPurple
+                            }
+                            else if indexPath.row == 1 && chordNumber[subindex] > 7{
+                                fullNotesCell.noteViews[rootNoteIndex].backgroundColor = lightPurple
+                            }
+                            
+                            print("\(subindex) times for this index \(index)")
+                            
+                            
+                        }
+                        
                     }
                 }
                 rootNoteIndex += PianoModel.intervals[index]
@@ -274,11 +290,7 @@ extension PianoVC: NavigationDelegate, ScalePageDelegate, ChordPageDelegate {
         chordNumber = [1,3,5]
         for i in 0 ..< 3 {
             chordNumber[i] += nthChord
-            if chordNumber[i] > 7 { chordNumber[i] -= 7 }
         }
-//        chordNumber[0] += nthChord
-//        chordNumber[1] += nthChord
-//        chordNumber[2] += nthChord
         collectionView.reloadData()
     }
 }
