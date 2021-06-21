@@ -188,15 +188,19 @@ extension PianoVC: UICollectionViewDataSource {
                     for subindex in 0 ..< 3 {
                         print(chordNumber)
                         if index == (chordNumber[subindex] > 7 ? chordNumber[subindex] - 7 : chordNumber[subindex]) {
-                      
+//                            if identifier + 2 > 12 {
+//                                chordNumberSecondOctave = chordNumber.removeFirst()
+//                                chordNumber.removeFirst()
+//
+//                            }
                             if indexPath.row == 0 && chordNumber[subindex] <= 7{
                                 fullNotesCell.noteViews[rootNoteIndex].backgroundColor = lightPurple
                             }
                             else if indexPath.row == 1 && chordNumber[subindex] > 7{
+                                chordNumber[subindex] -= 7
                                 fullNotesCell.noteViews[rootNoteIndex].backgroundColor = lightPurple
                             }
-                            
-                            print("\(subindex) times for this index \(index)")
+    
                             
                             
                         }
@@ -206,6 +210,7 @@ extension PianoVC: UICollectionViewDataSource {
                 rootNoteIndex += PianoModel.intervals[index]
                 if rootNoteIndex > 11 { rootNoteIndex -= 12 }
             }
+             
             return fullNotesCell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CCell", for: indexPath) as? C else { return UICollectionViewCell() }
@@ -286,10 +291,19 @@ extension PianoVC: NavigationDelegate, ScalePageDelegate, ChordPageDelegate {
         appendView(view: chordPageView)
     }
     func didSelectChord(chord: String, nthChord: Int, selectedScale: String) {
+        
         isShowingChordIndicator = true
         chordNumber = [1,3,5]
         for i in 0 ..< 3 {
             chordNumber[i] += nthChord
+        }
+        
+        switch selectedScale {
+        case "G":
+            chordNumber[1] += 7
+            chordNumber[2] += 7
+        default:
+            print("fail")
         }
         collectionView.reloadData()
     }
