@@ -45,11 +45,13 @@
                                     <action selector="toggleNoteDisplay:" destination="ZY2-RK-Z2G" eventType="valueChanged" id="XOi-4K-Isg"/>
                                 </connections>
                             </switch>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="roF-S3-AEN" customClass="CustomSlider" customModule="MVC_Template" customModuleProvider="target">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="roF-S3-AEN">
                                 <rect key="frame" x="253.5" y="169" width="389" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="385" id="53e-8T-gQg"/>
                                 </constraints>
+                                <color key="minimumTrackTintColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="ZY2-RK-Z2G" eventType="valueChanged" id="7Be-gs-2TT"/>
                                 </connections>

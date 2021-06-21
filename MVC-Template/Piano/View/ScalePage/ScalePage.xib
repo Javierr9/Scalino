@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +13,7 @@
                 <outlet property="guidanceMajorScalesLabel" destination="wOf-HZ-Eq7" id="d7O-MB-329"/>
                 <outlet property="infoMajorScalesLabel" destination="PZc-pm-gED" id="ACK-y4-q1w"/>
                 <outlet property="learnChordsButton" destination="4pV-du-6Jb" id="tU9-5N-frN"/>
+                <outlet property="testTitleLabel" destination="ndi-ZK-vQ2" id="8f7-VS-l7c"/>
                 <outlet property="titleMajorScalesLabel" destination="5Ab-W0-uAh" id="b9I-J5-hc4"/>
             </connections>
         </placeholder>
@@ -22,15 +22,15 @@
             <rect key="frame" x="0.0" y="0.0" width="580" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOf-HZ-Eq7">
-                    <rect key="frame" x="264" y="92" width="292" height="36"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOf-HZ-Eq7">
+                    <rect key="frame" x="264" y="92.5" width="292" height="36"/>
                     <string key="text">In major scales, the intervals are:
 1, 1, 1/2, 1, 1, 1, 1/2. </string>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAJOR SCALES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ab-W0-uAh">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAJOR SCALES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ab-W0-uAh">
                     <rect key="frame" x="24" y="8" width="200" height="22"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -38,7 +38,7 @@
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="XuB-cT-lmg">
                     <rect key="frame" x="24" y="44" width="200" height="100"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="CAP-fK-z7G"/>
                         <constraint firstAttribute="height" constant="100" id="KHY-DR-ZtB"/>
@@ -51,43 +51,46 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intervals are distance between notes. The distance between each notes are 1/2. For example, C to C# is 1/2. While C to D is 1. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZc-pm-gED">
-                    <rect key="frame" x="264" y="16" width="292" height="50.5"/>
+                    <rect key="frame" x="264" y="38" width="292" height="50.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pV-du-6Jb" customClass="PillButton" customModule="MVC_Template" customModuleProvider="target">
-                    <rect key="frame" x="324" y="92" width="156" height="30"/>
+                    <rect key="frame" x="304" y="102" width="196" height="30"/>
                     <state key="normal" title="Start Learning Chords!"/>
                     <connections>
                         <action selector="learnChordsButtonTapped:" destination="-1" eventType="touchUpInside" id="3vI-xs-pWf"/>
                     </connections>
                 </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-ZK-vQ2">
+                    <rect key="frame" x="266.5" y="8" width="47" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" red="0.3411764706" green="0.30588235289999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="4pV-du-6Jb" secondAttribute="bottom" constant="22" id="22c-dx-gqI"/>
+                <constraint firstAttribute="bottom" secondItem="4pV-du-6Jb" secondAttribute="bottom" constant="12" id="22c-dx-gqI"/>
+                <constraint firstItem="PZc-pm-gED" firstAttribute="top" secondItem="ndi-ZK-vQ2" secondAttribute="bottom" constant="8" id="5nd-fy-1x0"/>
                 <constraint firstAttribute="trailing" secondItem="wOf-HZ-Eq7" secondAttribute="trailing" constant="24" id="6ms-tJ-hG6"/>
-                <constraint firstAttribute="trailing" secondItem="4pV-du-6Jb" secondAttribute="trailing" constant="100" id="9Dx-6S-Sos"/>
+                <constraint firstAttribute="trailing" secondItem="4pV-du-6Jb" secondAttribute="trailing" constant="80" id="9Dx-6S-Sos"/>
                 <constraint firstItem="5Ab-W0-uAh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="H5a-sX-Zfs"/>
                 <constraint firstItem="PZc-pm-gED" firstAttribute="leading" secondItem="wOf-HZ-Eq7" secondAttribute="leading" id="Ooi-Ed-8gU"/>
-                <constraint firstItem="4pV-du-6Jb" firstAttribute="leading" secondItem="XuB-cT-lmg" secondAttribute="trailing" constant="100" id="RjW-Hs-PWb"/>
-                <constraint firstAttribute="bottom" secondItem="wOf-HZ-Eq7" secondAttribute="bottom" constant="16" id="SOx-GU-gg4"/>
+                <constraint firstItem="4pV-du-6Jb" firstAttribute="leading" secondItem="XuB-cT-lmg" secondAttribute="trailing" constant="80" id="RjW-Hs-PWb"/>
+                <constraint firstItem="ndi-ZK-vQ2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="U4P-Ot-7d7"/>
                 <constraint firstAttribute="trailing" secondItem="PZc-pm-gED" secondAttribute="trailing" constant="24" id="Y2c-DU-OVD"/>
                 <constraint firstItem="XuB-cT-lmg" firstAttribute="leading" secondItem="5Ab-W0-uAh" secondAttribute="leading" id="joc-FL-FK6"/>
                 <constraint firstItem="wOf-HZ-Eq7" firstAttribute="leading" secondItem="XuB-cT-lmg" secondAttribute="trailing" constant="40" id="mwy-Cr-Z3a"/>
+                <constraint firstItem="ndi-ZK-vQ2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nTK-Wh-9We"/>
                 <constraint firstAttribute="bottom" secondItem="XuB-cT-lmg" secondAttribute="bottom" id="thF-JZ-Own"/>
                 <constraint firstItem="XuB-cT-lmg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="u6w-n5-wZV"/>
                 <constraint firstItem="XuB-cT-lmg" firstAttribute="trailing" secondItem="5Ab-W0-uAh" secondAttribute="trailing" id="w5d-hV-9D3"/>
-                <constraint firstItem="PZc-pm-gED" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="xE2-5e-reS"/>
+                <constraint firstItem="wOf-HZ-Eq7" firstAttribute="top" secondItem="PZc-pm-gED" secondAttribute="bottom" constant="4" id="wMv-Uf-7FB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="34.821428571428569" y="118.84057971014494"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -276,7 +276,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <view tag="8" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DQN-DL-y78" userLabel="Bb">
-                        <rect key="frame" x="375" y="0.0" width="50" height="120"/>
+                        <rect key="frame" x="375" y="0.0" width="48" height="120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A♭" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-hg-r6d">
