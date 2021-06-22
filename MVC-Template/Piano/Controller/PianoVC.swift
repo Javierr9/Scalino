@@ -219,12 +219,12 @@ class PianoVC: UIViewController {
         } else {
             guard let chordPage = viewHierarchy.last as? ChordPage else { return }
             if correctChord.elementsEqual(chordsPlayed) {
-                print("BETUL CONG")
+//                print("BETUL CONG")
                 chordPage.Buttons[nthChord].backgroundColor = green
                 chordPage.Buttons[nthChord].layer.borderColor = green.cgColor
                 
             } else {
-                print("SALAH CONG")
+//                print("SALAH CONG")
                 chordPage.Buttons[nthChord].backgroundColor = red
                 chordPage.Buttons[nthChord].layer.borderColor = red.cgColor
             }
@@ -271,7 +271,6 @@ extension PianoVC: UICollectionViewDataSource {
               let noteView = sender.noteView,
               let noteLabel = sender.noteLabel
         else { return }
-        print("note pressed: \(notePressed), note: \(sender.state)")
         if sender.state == .began {
             playSound(key: notePressed)
             chordsPlayed.append(notePressed)
