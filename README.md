@@ -1,9 +1,7 @@
 
 # Scalino
 
-<p align="center">
-<img src="https://github.com/TimOliver/TOCropViewController/raw/main/Images/screenshot.png" width="840" style="margin:0 auto" />
-</p>
+![App Screenshot](https://user-images.githubusercontent.com/53168317/149714666-0713c79b-7eee-41c9-b615-3ad82413ef22.jpeg)
 
 Scalino is an app that helps hobbyist musicians to understand the basic concept of chords through **understanding** and **memorizing** music **scales**. By understanding basic chords and scales, it will make it **easier for musicians to create music**. This is the solution to the challenge because it could help **hobbyist musician to play chords** without having to **go back and forth looking for a chord tutorial.** 
 
@@ -12,7 +10,7 @@ The users can choose which **basic scale they want to learn (either major**), an
 
 ## Application Demo
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xyt60SLyQxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://youtu.be/xyt60SLyQxk 
 
 
 ## Documentation
@@ -22,7 +20,7 @@ On our application, we want to make a simple 2 octaves piano. The piano will hav
 
 Then we use a simple loops in the Swift file to set the border width and colors of the UIViews. The UIViews and Labels are also connected to the Swift file through IBOutlets collections. 
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af4dc62c-ef91-4fa9-8d89-d3659ccf36f3/Screen_Shot_2021-06-29_at_13.18.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af4dc62c-ef91-4fa9-8d89-d3659ccf36f3/Screen_Shot_2021-06-29_at_13.18.16.png)
+<img width="704" alt="Screen_Shot_2021-06-29_at_13 18 16" src="https://user-images.githubusercontent.com/53168317/149715073-f7fc7743-807e-4942-a8ca-2d2b3605f1fc.png">
 
 ```swift
 @IBOutlet var noteViews: [UIView]!
@@ -143,7 +141,7 @@ That's it. Of course it is much more complex than that, we have to figure out th
 
 In our application, we only use one view controller so the piano will be always accessible. We also designed it to be like an actual keyboard or digital piano that have a screen above the keys. So the smaller view in the middle will have actions such as when the button tap then it will change the views, or when the collection view cell for scales are tapped then the piano will have to update its numeric notation, etc. We could do it by using protocols and delegate.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85a115e8-57f4-47b7-99b5-f56c9f295915/Simulator_Screen_Shot_-_iPhone_12_-_2021-06-29_at_13.55.57.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85a115e8-57f4-47b7-99b5-f56c9f295915/Simulator_Screen_Shot_-_iPhone_12_-_2021-06-29_at_13.55.57.png)
+![Simulator_Screen_Shot_-_iPhone_12_-_2021-06-29_at_13 55 57](https://user-images.githubusercontent.com/53168317/149715149-462f04ee-2bc6-4cc0-8dcf-c154a699a30a.png)
 
 So for example in the Main Menu, there are three buttons for changing page. The Main Menu view itself were made with XIB and using a subclass of UIView. When we connect the button to the class as an IBAction, it needs to notify the Piano View Controller saying something like 'Hey, this button is tapped, so you have to do something'. The first thing to do is to create a protocols consisting of functions that will be called when the action happens. What we found was in order to make a function as optional, it needs to be a have the @objc keyword.
 
