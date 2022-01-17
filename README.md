@@ -13,8 +13,7 @@ The users can choose which **basic scale they want to learn (either major**), an
 https://youtu.be/xyt60SLyQxk 
 
 
-## Documentation
-### The Piano
+## The Piano
 
 On our application, we want to make a simple 2 octaves piano. The piano will have letter and numeric notation depending on the chosen music scale. We tried to make the piano using custom Collection View Cell. We first tried it to make just one octaves in one Collection View Cell. The individual notes itself are made of UIView with white and black background colors respectively. 
 
