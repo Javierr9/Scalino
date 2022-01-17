@@ -1,7 +1,9 @@
 
 # Scalino
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/53168317/149713478-1efcdf85-bc3d-4fc9-99be-98e208af7068.jpeg" width="840" style="margin:0 auto" />
+</p>
 
 Scalino is an app that helps hobbyist musicians to understand the basic concept of chords through **understanding** and **memorizing** music **scales**. By understanding basic chords and scales, it will make it **easier for musicians to create music**. This is the solution to the challenge because it could help **hobbyist musician to play chords** without having to **go back and forth looking for a chord tutorial.** 
 
