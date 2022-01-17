@@ -75,7 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C87DA86266A0A5A007F783E /* MVC-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C87DA86266A0A5A007F783E /* Scalino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scalino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C87DA89266A0A5A007F783E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C87DA8B266A0A5A007F783E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2C87DA92266A0A5B007F783E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		2C87DA87266A0A5A007F783E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C87DA86266A0A5A007F783E /* MVC-Template.app */,
+				2C87DA86266A0A5A007F783E /* Scalino.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -423,9 +423,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C87DA85266A0A5A007F783E /* MVC-Template */ = {
+		2C87DA85266A0A5A007F783E /* Scalino */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C87DA9A266A0A5B007F783E /* Build configuration list for PBXNativeTarget "MVC-Template" */;
+			buildConfigurationList = 2C87DA9A266A0A5B007F783E /* Build configuration list for PBXNativeTarget "Scalino" */;
 			buildPhases = (
 				2C87DA82266A0A5A007F783E /* Sources */,
 				2C87DA83266A0A5A007F783E /* Frameworks */,
@@ -435,9 +435,9 @@
 			);
 			dependencies = (
 			);
-			name = "MVC-Template";
+			name = Scalino;
 			productName = "MVC-Template";
-			productReference = 2C87DA86266A0A5A007F783E /* MVC-Template.app */;
+			productReference = 2C87DA86266A0A5A007F783E /* Scalino.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -467,7 +467,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C87DA85266A0A5A007F783E /* MVC-Template */,
+				2C87DA85266A0A5A007F783E /* Scalino */,
 			);
 		};
 /* End PBXProject section */
@@ -697,10 +697,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Serenade.Scalino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -716,10 +717,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Serenade.Scalino;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -735,7 +737,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C87DA9A266A0A5B007F783E /* Build configuration list for PBXNativeTarget "MVC-Template" */ = {
+		2C87DA9A266A0A5B007F783E /* Build configuration list for PBXNativeTarget "Scalino" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C87DA9B266A0A5B007F783E /* Debug */,
