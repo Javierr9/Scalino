@@ -10,7 +10,11 @@ The users can choose which **basic scale they want to learn (either major**), an
 
 ## Application Demo
 
-https://youtu.be/xyt60SLyQxk 
+
+
+https://user-images.githubusercontent.com/53168317/149779873-0bcb85da-429b-479d-a529-9c9e0fa535a9.mov
+
+
 
 
 ## The Piano
