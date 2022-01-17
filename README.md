@@ -176,9 +176,9 @@ extension PianoVC: NavigationDelegate {
 ## Authors
 - [Mutiara Sintesana Prasetyo - Project Manager](https://www.linkedin.com/in/mutiara-prasetyo-09448513a/)
 - [Nataniel Christandy - UI/UX Designer](https://www.linkedin.com/in/nataniel-christandy-0570911b9/)
-- [Nico Christian - iOS Engineer](https://www.linkedin.com/search/results/all/?keywords=nico%20christian&origin=RICH_QUERY_SUGGESTION&position=0&searchId=ae782b90-e697-454c-b338-ca919dcca85d)
-- [Javier Fransiscus - iOS Engineer](https://www.linkedin.com/in/javier-fransiscus/)
-- [Fernando Lawrence - iOS Engineer](https://www.linkedin.com/in/fernandolawrence/)
-- [Ivan Valentino Sigit - iOS Engineer](https://www.linkedin.com/in/ivanvsigit/)
+- [Nico Christian - iOS Developer](https://www.linkedin.com/in/nico-christian-1335a41ab/)
+- [Javier Fransiscus - iOS Developer](https://www.linkedin.com/in/javier-fransiscus/)
+- [Fernando Lawrence - iOS Developer](https://www.linkedin.com/in/fernandolawrence/)
+- [Ivan Valentino Sigit - iOS Developer](https://www.linkedin.com/in/ivanvsigit/)
 
 
